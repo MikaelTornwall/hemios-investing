@@ -9,6 +9,8 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.5",
     "react-vis": "^1.11.3",
+    "semantic-ui": "^2.4.1",
+    "semantic-ui-react": "^0.82.5",
     "set-default-browser": "^1.0.1",
     "yarn": "^1.10.1"
   },
