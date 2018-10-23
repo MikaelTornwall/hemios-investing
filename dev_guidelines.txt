@@ -1,0 +1,9 @@
+Styling
+
+- use the semantic components as much as you can https://react.semantic-ui.com
+- automatically watch for changes in .override styles by running "gulp watch" command in src/semantic folder
+- add custom .scss file in the same folder as the .js file and give them the same name
+
+Formatting
+
+- code will be automatically formatter with prettier but but with the prettier vs code extension you can format on the fly aswell
