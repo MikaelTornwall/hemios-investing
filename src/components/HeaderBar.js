@@ -7,7 +7,7 @@ const HeaderBar = () => {
     <>
       <div className={'header-bar'}>
         <Icon className={'left'} name="area graph" size="huge" />
-        <Header className={'left'} as="h2">
+        <Header className={'left'} as="h3">
           Hemios Investing
         </Header>
         <Icon className={'right'} name="user circle" size="huge" />
