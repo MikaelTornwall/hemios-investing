@@ -8,7 +8,7 @@ import {
 } from 'react-vis';
 import { Card } from 'semantic-ui-react';
 
-export default class GraphBox extends Component {
+export default class GraphCard extends Component {
   render() {
     return (
       <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab } from 'semantic-ui-react';
 
-import GraphBox from './GraphBox';
+import GraphCard from './GraphCard';
 import './ViewTabs.scss';
 
 const panes = [
@@ -9,7 +9,7 @@ const panes = [
     menuItem: 'Tab 1',
     render: () => (
       <Tab.Pane attached={false}>
-        <GraphBox i="1" />
+        <GraphCard i="1" />
       </Tab.Pane>
     )
   },
@@ -17,7 +17,7 @@ const panes = [
     menuItem: 'Tab 2',
     render: () => (
       <Tab.Pane attached={false}>
-        <GraphBox i="2" />
+        <GraphCard i="2" />
       </Tab.Pane>
     )
   },
@@ -25,7 +25,7 @@ const panes = [
     menuItem: 'Tab 3',
     render: () => (
       <Tab.Pane attached={false}>
-        <GraphBox i="3" />
+        <GraphCard i="3" />
       </Tab.Pane>
     )
   }
