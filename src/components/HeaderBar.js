@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Icon, Header, Grid } from 'semantic-ui-react';
+import { Icon, Header } from 'semantic-ui-react';
 import './HeaderBar.scss';
-export const HeaderBar = () => {
+
+const HeaderBar = () => {
   return (
     <>
       <div className={'header-bar'}>
@@ -14,3 +15,5 @@ export const HeaderBar = () => {
     </>
   );
 };
+
+export default HeaderBar;

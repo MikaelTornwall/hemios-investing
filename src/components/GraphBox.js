@@ -13,7 +13,7 @@ export default class GraphBox extends Component {
     return (
       <>
         <Card>
-          <Card.Content header={'KPI_' + this.props.index} />
+          <Card.Content header={'KPI_' + this.props.i} />
           <Card.Content>
             <XYPlot width={200} height={200}>
               <HorizontalGridLines />
