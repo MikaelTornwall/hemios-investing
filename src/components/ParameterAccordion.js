@@ -31,8 +31,8 @@ export default class ParameterAccordion extends Component {
           Parameters
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 0}>
-          <Grid>
-            <GridRow columns={3}>
+          <Grid columns={3} stackable>
+            <GridRow>
               <GridColumn>
                 <CompanySelect />
               </GridColumn>
