@@ -1,0 +1,50 @@
+.GetStarted {
+
+  margin:0;
+  min-height: 860px;
+  background:
+  linear-gradient(to top right, transparent 50%, white 40.25%), /* update direction and start/stop value to your needs */
+  linear-gradient(to bottom left, grey, #5d607a, #0B1C92);
+  background-size: 850% auto;
+  transition: 0.5s;
+
+  padding: 70px;
+
+  color: #fff;
+
+  .steps-n-video {
+    display: flex;
+  }
+
+  .step {
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    span {
+      min-width: 45px;
+      margin-right: 10px;
+    }
+  }
+
+  .circle {
+    border: 2px solid;
+    border-radius: 50px;
+    height: 45px;
+    width: 45px;
+
+    text-align: center;
+    line-height: 35px;
+    font-size: 28px;
+  }
+
+  .heading {
+    display: flex;
+    margin-bottom: 20px;
+
+    > img {
+      margin-left: 10px;
+      align-self: flex-start;
+    }
+  }
+}
