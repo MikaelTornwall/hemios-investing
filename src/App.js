@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
+import financialsService from './services/financials';
 
 //Fontawesome library
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -16,6 +17,15 @@ import NoPageError from './pages/NoPageError';
 library.add(faGhost, faUserCircle);
 
 class App extends Component {
+  state = {
+    data: []
+  };
+
+  async componentDidMount() {
+    const data = await financialsService.getAll();
+    this.setState({ data: data });
+  }
+
   render() {
     return (
       <>
