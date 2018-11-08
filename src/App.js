@@ -23,6 +23,7 @@ class App extends Component {
 
   async componentDidMount() {
     const data = await financialsService.getAll();
+    console.log(data);
     this.setState({ data: data });
   }
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3001/api/data';
+const baseUrl = 'https://polar-springs-21656.herokuapp.com/api/data';
 
 const getAll = async () => {
   const req = await axios.get(baseUrl);
