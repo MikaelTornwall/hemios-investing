@@ -19,11 +19,10 @@ export default class ParameterAccordionContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      companySelectHidden: false,
-      KPISelectHidden: false,
-      timeIntervalSelectHidden: false
+      companySelectVisible: true,
+      KPISelectVisible: true,
+      timeIntervalSelectVisible: true
     };
-    // this.hideCompanySelect = this.hideCompanySelect.bind(this);
   }
   componentDidMount() {
     window.addEventListener('resize', this.resize.bind(this));
@@ -34,39 +33,39 @@ export default class ParameterAccordionContainer extends Component {
     this.setState({ mobile: window.innerWidth >= 768 });
   }
 
-  hideCompanySelect = hide => {
+  showCompanySelect = show => {
     if (this.state.mobile) {
-      this.hideAll(hide);
+      this.showAll(show);
     } else {
       this.setState({
-        companySelectHidden: hide
+        companySelectVisible: show
       });
     }
   };
-  hideKPISelect = hide => {
+  showKPISelect = show => {
     if (this.state.mobile) {
-      this.hideAll(hide);
+      this.showAll(show);
     } else {
       this.setState({
-        KPISelectHidden: hide
+        KPISelectVisible: show
       });
     }
   };
-  hideTimeIntervalSelect = hide => {
+  showTimeIntervalSelect = show => {
     if (this.state.mobile) {
-      this.hideAll(hide);
+      this.showAll(show);
     } else {
       this.setState({
-        timeIntervalSelectHidden: hide
+        timeIntervalSelectVisible: show
       });
     }
   };
 
-  hideAll = hide => {
+  showAll = show => {
     this.setState({
-      companySelectHidden: hide,
-      KPISelectHidden: hide,
-      timeIntervalSelectHidden: hide
+      companySelectVisible: show,
+      KPISelectVisible: show,
+      timeIntervalSelectVisible: show
     });
   };
 
@@ -76,20 +75,20 @@ export default class ParameterAccordionContainer extends Component {
         <GridRow>
           <GridColumn>
             <CompanySelectAccordion
-              hidden={this.state.companySelectHidden}
-              hideAccordion={this.hideCompanySelect}
+              visible={this.state.companySelectVisible}
+              showAccordion={this.showCompanySelect}
             />
           </GridColumn>
           <GridColumn>
             <KPISelectAccordion
-              hidden={this.state.KPISelectHidden}
-              hideAccordion={this.hideKPISelect}
+              visible={this.state.KPISelectVisible}
+              showAccordion={this.showKPISelect}
             />
           </GridColumn>
           <GridColumn>
             <TimeIntervalSelectAccordion
-              hidden={this.state.timeIntervalSelectHidden}
-              hideAccordion={this.hideTimeIntervalSelect}
+              visible={this.state.timeIntervalSelectVisible}
+              showAccordion={this.showTimeIntervalSelect}
             />
           </GridColumn>
         </GridRow>
