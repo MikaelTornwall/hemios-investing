@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Icon, Label } from 'semantic-ui-react';
-import { getPortPromise } from 'portfinder';
 
 export function parameterAccordion(WrappedComponent, title) {
   class ParameterAccordion extends Component {
@@ -14,7 +13,7 @@ export function parameterAccordion(WrappedComponent, title) {
           <Label as="a" onClick={this.handleClick}>
             <Icon
               name="dropdown"
-              rotated={this.props.visible ? '' : 'counterclockwise'}
+              rotated={this.props.visible ? undefined : 'counterclockwise'}
               size="small"
             />
             {title}

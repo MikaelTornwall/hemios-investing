@@ -11,6 +11,7 @@
     "gulp": "^3.9.1",
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
+    "lodash": "^4.17.11",
     "node-sass": "^4.9.4",
     "prettier": "^1.14.3",
     "react": "^16.5.2",

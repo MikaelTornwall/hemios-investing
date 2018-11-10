@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import { Accordion, Icon, Grid, GridColumn, GridRow } from 'semantic-ui-react';
-import { tabletBreakpointt } from '../semantic/src/themes/default/globals/site.variables';
+import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
 
 import './ParameterAccordionContainer.scss';
-import CompanySelect from '../components/CompanySelect';
-import KPISelect from '../components/KPISelect';
-import TimeIntervalSelect from '../components/TimeIntervalSelect';
-import { parameterAccordion } from '../components/ParameterAccordion';
+import CompanySelect from '../components/parameters/CompanySelect';
+import KPISelect from '../components/parameters/KPISelect';
+import TimeIntervalSelect from '../components/parameters/TimeIntervalSelect';
+import { parameterAccordion } from '../components/parameters/ParameterAccordion';
+import { selectWithLabels } from '../components/parameters/SelectWithLabels';
 
-const CompanySelectAccordion = parameterAccordion(CompanySelect, 'Company');
-const KPISelectAccordion = parameterAccordion(KPISelect, 'KPI');
+const CompanySelectAccordion = parameterAccordion(
+  selectWithLabels(CompanySelect, 1),
+  'Company'
+);
+const KPISelectAccordion = parameterAccordion(
+  selectWithLabels(KPISelect, 2),
+  'KPI'
+);
 const TimeIntervalSelectAccordion = parameterAccordion(
   TimeIntervalSelect,
   'Time interval'
