@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
+import { getPortPromise } from 'portfinder';
 
 export function parameterAccordion(WrappedComponent, title) {
   class ParameterAccordion extends Component {
@@ -11,22 +12,23 @@ export function parameterAccordion(WrappedComponent, title) {
       const newIndex = activeIndex === index ? -1 : index;
 
       this.setState({ activeIndex: newIndex });
+
+      this.props.hideAccordion(newIndex === -1);
     };
 
     render() {
-      const { activeIndex } = this.state;
-
+      const activeIndex = this.props.hidden ? -1 : 0;
       return (
         <Accordion styled className={'parameter-accordion'}>
           <Accordion.Title
-            active={activeIndex === 0}
+            active={!this.props.hidden}
             index={0}
             onClick={this.handleClick}
           >
             <Icon name="dropdown" size="large" />
             {title}
           </Accordion.Title>
-          <Accordion.Content active={activeIndex === 0}>
+          <Accordion.Content active={!this.props.hidden}>
             <WrappedComponent />
           </Accordion.Content>
         </Accordion>
