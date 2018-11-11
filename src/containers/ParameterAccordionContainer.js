@@ -83,18 +83,21 @@ export default class ParameterAccordionContainer extends Component {
             <CompanySelectAccordion
               visible={this.state.companySelectVisible}
               showAccordion={this.showCompanySelect}
+              updateSelection={this.props.updateCompanies}
             />
           </GridColumn>
           <GridColumn>
             <KPISelectAccordion
               visible={this.state.KPISelectVisible}
               showAccordion={this.showKPISelect}
+              updateSelection={this.props.updateKPIs}
             />
           </GridColumn>
           <GridColumn>
             <TimeIntervalSelectAccordion
               visible={this.state.timeIntervalSelectVisible}
               showAccordion={this.showTimeIntervalSelect}
+              updateSelection={this.props.updateTimeInterval}
             />
           </GridColumn>
         </GridRow>

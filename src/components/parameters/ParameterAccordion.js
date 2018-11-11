@@ -19,7 +19,10 @@ export function parameterAccordion(WrappedComponent, title) {
             {title}
           </Label>
           <Container>
-            <WrappedComponent visible={this.props.visible} />
+            <WrappedComponent
+              updateSelection={this.props.updateSelection}
+              visible={this.props.visible}
+            />
           </Container>
         </>
       );

@@ -8,27 +8,25 @@ export default class View extends Component {
   state = {
     selectedCompanies: [],
     selectedKPIs: [],
-    selectedTimeInterval: []
+    selectedTimeInterval: [],
   };
 
   updateCompanies = selectedCompanies => {
     this.setState({
-      selectedCompanies: selectedCompanies
+      selectedCompanies: selectedCompanies,
     });
   };
 
   updateKPIs = selectedKPIs => {
     this.setState({
-      selectedKPIs: selectedKPIs
+      selectedKPIs: selectedKPIs,
     });
   };
-
   updateTimeInterval = selectedTimeInterval => {
     this.setState({
-      selectedTimeInterval: selectedTimeInterval
+      selectedTimeInterval: selectedTimeInterval,
     });
   };
-
   render() {
     return (
       <>

@@ -2,7 +2,9 @@ import React from 'react';
 import { Tab } from 'semantic-ui-react';
 
 import GraphCard from './GraphCard';
+
 import ParameterAccordionContainer from '../containers/ParameterAccordionContainer';
+import View from './View';
 
 import './ViewTabs.scss';
 
@@ -11,8 +13,7 @@ const panes = [
     menuItem: 'Tab 1',
     render: () => (
       <Tab.Pane attached={false}>
-        <ParameterAccordionContainer />
-        <GraphCard i="1" />
+        <View />
       </Tab.Pane>
     )
   },
@@ -20,8 +21,7 @@ const panes = [
     menuItem: 'Tab 2',
     render: () => (
       <Tab.Pane attached={false}>
-        <ParameterAccordionContainer />
-        <GraphCard i="2" />
+        <View />
       </Tab.Pane>
     )
   },
@@ -29,8 +29,7 @@ const panes = [
     menuItem: 'Tab 3',
     render: () => (
       <Tab.Pane attached={false}>
-        <ParameterAccordionContainer />
-        <GraphCard i="3" />
+        <View />
       </Tab.Pane>
     )
   }
