@@ -22,25 +22,14 @@ const TimeIntervalSelectAccordion = parameterAccordion(
 );
 
 export default class ParameterAccordionContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      companySelectVisible: true,
-      KPISelectVisible: true,
-      timeIntervalSelectVisible: true
-    };
-  }
-  componentDidMount() {
-    window.addEventListener('resize', this.resize.bind(this));
-    this.resize();
-  }
-
-  resize() {
-    this.setState({ mobile: window.innerWidth >= 768 });
-  }
+  state = {
+    companySelectVisible: true,
+    KPISelectVisible: true,
+    timeIntervalSelectVisible: true
+  };
 
   showCompanySelect = show => {
-    if (this.state.mobile) {
+    if (this.props.mobile) {
       this.showAll(show);
     } else {
       this.setState({
@@ -49,7 +38,7 @@ export default class ParameterAccordionContainer extends Component {
     }
   };
   showKPISelect = show => {
-    if (this.state.mobile) {
+    if (this.props.mobile) {
       this.showAll(show);
     } else {
       this.setState({
@@ -58,7 +47,7 @@ export default class ParameterAccordionContainer extends Component {
     }
   };
   showTimeIntervalSelect = show => {
-    if (this.state.mobile) {
+    if (this.props.mobile) {
       this.showAll(show);
     } else {
       this.setState({

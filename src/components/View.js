@@ -34,6 +34,7 @@ export default class View extends Component {
           updateCompanies={this.updateCompanies}
           updateKPIs={this.updateKPIs}
           updateTimeInterval={this.updateTimeInterval}
+          mobile={this.props.mobile}
           tab={1}
         />
         <GraphCard i="1" />

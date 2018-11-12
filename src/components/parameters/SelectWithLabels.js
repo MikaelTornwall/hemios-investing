@@ -8,34 +8,32 @@ const colors = ['red', 'green', 'blue', 'yellow', 'grey'];
 
 export function selectWithLabels(WrappedSelectComponent, type) {
   class SelectWithLabels extends Component {
-    state = {
-      options: [],
-      selectedItems: []
-    };
+    options = [];
+    selectedItems = [];
 
     handleChange = (e, { value }) => {
-      const options = this.state.options.slice();
+      const options = this.options.slice();
       const selectedItem = _.remove(options, item => {
         return item.value === value;
       });
-      this.setState(prevState => ({
-        selectedItems: [...prevState.selectedItems, ...selectedItem],
-        options: options
-      }));
-      this.props.updateSelection(this.state.selectedItems);
+
+      this.selectedItems = [...this.selectedItems, ...selectedItem];
+      this.options = options;
+      this.props.updateSelection(this.selectedItems);
     };
     unSelectItem = value => {
-      const selectedItems = this.state.selectedItems.slice();
+      const selectedItems = this.selectedItems.slice();
       const removedItem = _.remove(selectedItems, item => {
         return item.value === value;
       });
-      this.setState(prevState => ({
-        options: this.sortItemsAphabetically([
-          ...prevState.options,
-          ...removedItem
-        ]),
-        selectedItems: selectedItems
-      }));
+
+      this.options = this.sortItemsAphabetically([
+        ...this.options,
+        ...removedItem
+      ]);
+      this.selectedItems = selectedItems;
+
+      this.props.updateSelection(this.selectedItems.slice());
     };
 
     sortItemsAphabetically = items => {
@@ -47,9 +45,7 @@ export function selectWithLabels(WrappedSelectComponent, type) {
         this.colorOptions(options);
       }
       this.sortItemsAphabetically(options);
-      this.setState({
-        options: options
-      });
+      this.options = options;
     };
 
     colorOptions = options => {
@@ -70,13 +66,13 @@ export function selectWithLabels(WrappedSelectComponent, type) {
             <WrappedSelectComponent
               handleChange={this.handleChange}
               populate={this.populate}
-              selectedItems={this.state.selectedItems}
-              options={this.state.options}
+              selectedItems={this.selectedItems}
+              options={this.options}
               visible={this.props.visible}
             />
           </Container>
           <Container>
-            {this.state.selectedItems.map(selectedItem => (
+            {this.selectedItems.map(selectedItem => (
               <SelectLabel
                 onIconClick={this.unSelectItem}
                 key={selectedItem.key}

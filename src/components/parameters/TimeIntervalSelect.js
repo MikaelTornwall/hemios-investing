@@ -3,23 +3,16 @@ import { Container, Dropdown } from 'semantic-ui-react';
 import _ from 'lodash';
 
 export default class TimeIntervalSelect extends Component {
-  state = {
-    startMonth: 1,
-    startYear: 2015,
-    endMonth: 12,
-    endYear: 2016,
-    startMonthOptions: [],
-    startYearOptions: [],
-    endMonthOptions: [],
-    endYearOptions: []
-  };
+  startMonth = 1;
+  startYear = 2015;
+  endMonth = 12;
+  endYear = 2016;
+  startMonthOptions = [];
+  startYearOptions = [];
+  endMonthOptions = [];
+  endYearOptions = [];
 
-  componentDidMount() {
-    var startMonthOptions = [];
-    var endMonthOptions = [];
-    var startYearOptions = [];
-    var endYearOptions = [];
-
+  componentWillMount() {
     _.range(1, 13).forEach(i => {
       const startMonth = {
         key: i,
@@ -31,8 +24,8 @@ export default class TimeIntervalSelect extends Component {
         value: i,
         text: i.toString()
       };
-      startMonthOptions.push(startMonth);
-      endMonthOptions.push(endMonth);
+      this.startMonthOptions.push(startMonth);
+      this.endMonthOptions.push(endMonth);
     });
 
     _.range(1990, 2020).forEach(i => {
@@ -46,37 +39,36 @@ export default class TimeIntervalSelect extends Component {
         value: i,
         text: i.toString()
       };
-      startYearOptions.push(startYear);
-      endYearOptions.push(endYear);
+      this.startYearOptions.push(startYear);
+      this.endYearOptions.push(endYear);
     });
-
-    this.setState({
-      startMonthOptions: startMonthOptions,
-      endMonthOptions: endMonthOptions,
-      startYearOptions: startYearOptions,
-      endYearOptions: endYearOptions
-    });
+    this.updateSelection();
   }
 
   updateStartMonth = (e, { value }) => {
-    this.setState({ startMonth: value });
+    this.startMonth = value;
     this.updateSelection();
   };
   updateStartYear = (e, { value }) => {
-    this.setState({ startYear: value });
+    this.startYear = value;
     this.updateSelection();
   };
   updateEndMonth = (e, { value }) => {
-    this.setState({ endMonth: value });
+    this.endMonth = value;
     this.updateSelection();
   };
   updateEndYear = (e, { value }) => {
-    this.setState({ endYear: value });
+    this.endYear = value;
     this.updateSelection();
   };
 
   updateSelection = () => {
-    this.props.updateSelection(this.state);
+    this.props.updateSelection([
+      this.startMonth,
+      this.startYear,
+      this.endMonth,
+      this.endYear
+    ]);
   };
   render() {
     return (
@@ -84,37 +76,37 @@ export default class TimeIntervalSelect extends Component {
         {this.props.visible && (
           <Container>
             <Dropdown
-              value={this.state.startMonth}
+              value={this.startMonth}
               onChange={this.updateStartMonth}
               placeholder="Month"
               compact
               selection
-              options={this.state.startMonthOptions}
+              options={this.startMonthOptions}
             />
             <Dropdown
-              value={this.state.startYear}
+              value={this.startYear}
               onChange={this.updateStartYear}
               placeholder="Year"
               compact
               selection
-              options={this.state.startYearOptions}
+              options={this.startYearOptions}
             />
             {' - '}
             <Dropdown
-              value={this.state.endMonth}
+              value={this.endMonth}
               onChange={this.updateEndMonth}
               placeholder="Month"
               compact
               selection
-              options={this.state.endMonthOptions}
+              options={this.endMonthOptions}
             />
             <Dropdown
-              value={this.state.endYear}
+              value={this.endYear}
               onChange={this.updateEndYear}
               placeholder="Year"
               compact
               selection
-              options={this.state.endYearOptions}
+              options={this.endYearOptions}
             />
           </Container>
         )}

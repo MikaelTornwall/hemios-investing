@@ -18,22 +18,31 @@ library.add(faGhost, faUserCircle);
 
 class App extends Component {
   state = {
-    data: []
+    data: [],
+    mobile: undefined
   };
 
   async componentDidMount() {
     const data = await financialsService.getAll();
     console.log(data);
     this.setState({ data: data });
-  }
 
+    window.addEventListener('resize', this.resize.bind(this));
+    this.resize();
+  }
+  resize() {
+    this.setState({ mobile: window.innerWidth >= 768 });
+  }
   render() {
     return (
       <>
         <BrowserRouter>
           <Switch>
             <Route path="/" component={LandingPage} exact />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route
+              path="/dashboard"
+              render={() => <Dashboard mobile={this.state.mobile} />}
+            />
             <Route component={NoPageError} />
           </Switch>
         </BrowserRouter>
