@@ -15,53 +15,64 @@ export default class TimeIntervalSelect extends Component {
   };
 
   componentDidMount() {
+    var startMonthOptions = [];
+    var endMonthOptions = [];
+    var startYearOptions = [];
+    var endYearOptions = [];
+
     _.range(1, 13).forEach(i => {
-      const month = {
+      const startMonth = {
         key: i,
         value: i,
         text: i.toString()
       };
-      this.state.startMonthOptions.push(month);
-      this.state.endMonthOptions.push(month);
+      const endMonth = {
+        key: i,
+        value: i,
+        text: i.toString()
+      };
+      startMonthOptions.push(startMonth);
+      endMonthOptions.push(endMonth);
     });
 
     _.range(1990, 2020).forEach(i => {
-      const year = {
+      const startYear = {
         key: i,
         value: i,
         text: i.toString()
       };
-      this.state.startYearOptions.push(year);
-      this.state.endYearOptions.push(year);
+      const endYear = {
+        key: i,
+        value: i,
+        text: i.toString()
+      };
+      startYearOptions.push(startYear);
+      endYearOptions.push(endYear);
     });
 
-    this.disableInvalidDateOptions();
-  }
-
-  disableInvalidDateOptions() {
-    this.state.startYearOptions.forEach(
-      year => (year.disabled = year > this.state.startYear)
-    );
-    this.state.endYearOptions.forEach(
-      year => (year.disabled = year < this.state.startYear)
-    );
+    this.setState({
+      startMonthOptions: startMonthOptions,
+      endMonthOptions: endMonthOptions,
+      startYearOptions: startYearOptions,
+      endYearOptions: endYearOptions
+    });
   }
 
   updateStartMonth = (e, { value }) => {
     this.setState({ startMonth: value });
-    this.updateSelection(this.state);
+    this.updateSelection();
   };
   updateStartYear = (e, { value }) => {
     this.setState({ startYear: value });
-    this.updateSelection(this.state);
+    this.updateSelection();
   };
   updateEndMonth = (e, { value }) => {
     this.setState({ endMonth: value });
-    this.updateSelection(this.state);
+    this.updateSelection();
   };
   updateEndYear = (e, { value }) => {
     this.setState({ endYear: value });
-    this.updateSelection(this.state);
+    this.updateSelection();
   };
 
   updateSelection = () => {

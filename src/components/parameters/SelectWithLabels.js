@@ -24,7 +24,6 @@ export function selectWithLabels(WrappedSelectComponent, type) {
       }));
       this.props.updateSelection(this.state.selectedItems);
     };
-
     unSelectItem = value => {
       const selectedItems = this.state.selectedItems.slice();
       const removedItem = _.remove(selectedItems, item => {
