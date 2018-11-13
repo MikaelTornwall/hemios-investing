@@ -13,23 +13,21 @@ export default class CompanySelect extends Component {
   render() {
     return (
       <>
-        {this.props.visible && (
-          <Container>
-            <Dropdown
-              fluid
-              search
-              selection
-              options={this.props.options}
-              onChange={this.props.handleChange}
-              placeholder={
-                this.props.selectedItems.length === 0
-                  ? 'Add company'
-                  : 'Add another company'
-              }
-              value=""
-            />
-          </Container>
-        )}
+        <Container>
+          <Dropdown
+            fluid
+            search
+            selection
+            options={this.props.options}
+            onChange={this.props.handleChange}
+            placeholder={
+              this.props.selectedItems.length === 0
+                ? 'Add company'
+                : 'Add another company'
+            }
+            value=""
+          />
+        </Container>
       </>
     );
   }
