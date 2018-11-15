@@ -3,12 +3,7 @@ import { Container, Dropdown, Button } from 'semantic-ui-react';
 
 export default class KPISelect extends Component {
   componentDidMount() {
-    this.props.populate([
-      { key: 'a', value: 'A', text: 'KPI_A' },
-      { key: 'b', value: 'B', text: 'KPI_B' },
-      { key: 'c', value: 'C', text: 'KPI_C' },
-      { key: 'd', value: 'D', text: 'KPI_D' }
-    ]);
+    this.props.populate(this.props.dataProvider.getAllKPIsList());
   }
   render() {
     return (
@@ -18,6 +13,7 @@ export default class KPISelect extends Component {
             fluid
             search
             selection
+            selectOnBlur={false}
             options={this.props.options}
             onChange={this.props.handleChange}
             placeholder={

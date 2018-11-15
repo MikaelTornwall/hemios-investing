@@ -7,7 +7,7 @@ export default class GraphCard extends Component {
     return (
       <>
         <Card>
-          <Card.Content header={'KPI_' + this.props.i} />
+          <Card.Content header={this.props.kpi.text} />
           <Card.Content>
             <Graph />
           </Card.Content>

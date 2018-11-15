@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {} from 'semantic-ui-react';
+import { Item, Grid } from 'semantic-ui-react';
 
 import GraphCard from './GraphCard';
 import ParameterAccordionContainer from '../containers/ParameterAccordionContainer';
@@ -37,7 +37,17 @@ export default class View extends Component {
           {...this.props}
           tab={1}
         />
-        <GraphCard i="1" />
+        <Grid columns={3}>
+          {this.state.selectedKPIs.map(selectedKPI => (
+            <Grid.Column>
+              <GraphCard
+                kpi={selectedKPI}
+                companies={this.state.selectedCompanies}
+                dataProvider={this.props.dataProvider}
+              />
+            </Grid.Column>
+          ))}
+        </Grid>
       </>
     );
   }

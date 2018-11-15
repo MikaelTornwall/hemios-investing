@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import SelectLabel from './SelectLabel';
 
-const colors = ['red', 'green', 'blue', 'yellow', 'grey'];
+const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'pink'];
 
 export function selectWithLabels(WrappedSelectComponent, type) {
   class SelectWithLabels extends Component {
@@ -29,7 +29,7 @@ export function selectWithLabels(WrappedSelectComponent, type) {
 
       this.options = this.sortItemsAphabetically([
         ...this.options,
-        ...removedItem,
+        ...removedItem
       ]);
       this.selectedItems = selectedItems;
 
@@ -53,7 +53,7 @@ export function selectWithLabels(WrappedSelectComponent, type) {
       const optionsWithColor = [];
       options.forEach(item => {
         const coloredItem = item;
-        coloredItem.color = colors[i % (colors.length - 1)];
+        coloredItem.color = colors[i % colors.length];
         optionsWithColor.push(coloredItem);
         i += 1;
       });
