@@ -29,7 +29,7 @@ export function selectWithLabels(WrappedSelectComponent, type) {
 
       this.options = this.sortItemsAphabetically([
         ...this.options,
-        ...removedItem
+        ...removedItem,
       ]);
       this.selectedItems = selectedItems;
 
@@ -70,6 +70,7 @@ export function selectWithLabels(WrappedSelectComponent, type) {
                 selectedItems={this.selectedItems}
                 options={this.options}
                 visible={this.props.visible}
+                dataProvider={this.props.dataProvider}
               />
             </Container>
           )}

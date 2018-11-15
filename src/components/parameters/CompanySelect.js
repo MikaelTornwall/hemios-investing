@@ -3,18 +3,20 @@ import { Container, Dropdown } from 'semantic-ui-react';
 
 export default class CompanySelect extends Component {
   componentDidMount() {
-    this.props.populate([
-      { key: 'a', value: 'A', text: 'CompanyA' },
-      { key: 'b', value: 'B', text: 'CompanyB' },
-      { key: 'c', value: 'C', text: 'CompanyC' },
-      { key: 'd', value: 'D', text: 'CompanyD' }
-    ]);
+    // this.props.populate([
+    //   { key: 'a', value: 'A', text: 'CompanyA' },
+    //   { key: 'b', value: 'B', text: 'CompanyB' },
+    //   { key: 'c', value: 'C', text: 'CompanyC' },
+    //   { key: 'd', value: 'D', text: 'CompanyD' },
+    // ]);
+    this.props.populate(this.props.dataProvider.getAllCompaniesList());
   }
   render() {
     return (
       <>
         <Container>
           <Dropdown
+            selectOnBlur={false}
             fluid
             search
             selection

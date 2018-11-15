@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #some win - mac issues
-semantic.json
+./semantic.json

@@ -73,6 +73,7 @@ export default class ParameterAccordionContainer extends Component {
               visible={this.state.companySelectVisible}
               showAccordion={this.showCompanySelect}
               updateSelection={this.props.updateCompanies}
+              dataProvider={this.props.dataProvider}
             />
           </GridColumn>
           <GridColumn>
@@ -80,6 +81,7 @@ export default class ParameterAccordionContainer extends Component {
               visible={this.state.KPISelectVisible}
               showAccordion={this.showKPISelect}
               updateSelection={this.props.updateKPIs}
+              dataProvider={this.props.dataProvider}
             />
           </GridColumn>
           <GridColumn>

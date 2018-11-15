@@ -22,6 +22,7 @@ export function parameterAccordion(WrappedComponent, title) {
             <WrappedComponent
               updateSelection={this.props.updateSelection}
               visible={this.props.visible}
+              dataProvider={this.props.dataProvider}
             />
           </Container>
         </>

@@ -10,6 +10,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 // Import all necessary fontawesome icons here
 import { faGhost, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
+import DataProvider from './DataProvider';
+
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import NoPageError from './pages/NoPageError';
@@ -17,15 +19,10 @@ import NoPageError from './pages/NoPageError';
 library.add(faGhost, faUserCircle);
 
 class App extends Component {
-  state = {
-    data: [],
-    mobile: undefined
-  };
-
+  state = {};
   async componentDidMount() {
     const data = await financialsService.getAll();
-    console.log(data);
-    this.setState({ data: data });
+    this.setState({ data: data, dataProvider: new DataProvider(data) });
 
     window.addEventListener('resize', this.resize.bind(this));
     this.resize();
@@ -41,7 +38,14 @@ class App extends Component {
             <Route path="/" component={LandingPage} exact />
             <Route
               path="/dashboard"
-              render={() => <Dashboard mobile={this.state.mobile} />}
+              render={() =>
+                this.state.dataProvider ? (
+                  <Dashboard
+                    dataProvider={this.state.dataProvider}
+                    mobile={this.state.mobile}
+                  />
+                ) : null
+              }
             />
             <Route component={NoPageError} />
           </Switch>

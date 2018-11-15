@@ -8,23 +8,23 @@ export default class View extends Component {
   state = {
     selectedCompanies: [],
     selectedKPIs: [],
-    selectedTimeInterval: [],
+    selectedTimeInterval: []
   };
 
   updateCompanies = selectedCompanies => {
     this.setState({
-      selectedCompanies: selectedCompanies,
+      selectedCompanies: selectedCompanies
     });
   };
 
   updateKPIs = selectedKPIs => {
     this.setState({
-      selectedKPIs: selectedKPIs,
+      selectedKPIs: selectedKPIs
     });
   };
   updateTimeInterval = selectedTimeInterval => {
     this.setState({
-      selectedTimeInterval: selectedTimeInterval,
+      selectedTimeInterval: selectedTimeInterval
     });
   };
   render() {
@@ -34,7 +34,7 @@ export default class View extends Component {
           updateCompanies={this.updateCompanies}
           updateKPIs={this.updateKPIs}
           updateTimeInterval={this.updateTimeInterval}
-          mobile={this.props.mobile}
+          {...this.props}
           tab={1}
         />
         <GraphCard i="1" />
