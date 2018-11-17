@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import Graph from './Graph';
+import LineChart from './LineChart';
+import BarChart from './BarChart';
 import { Card } from 'semantic-ui-react';
 
 export default class GraphCard extends Component {
   render() {
     return (
       <>
-        <Card>
+        <Card style={{ width: 400 }}>
           <Card.Content header={this.props.kpi.text} />
           <Card.Content>
-            <Graph />
+            <LineChart />
           </Card.Content>
         </Card>
       </>
