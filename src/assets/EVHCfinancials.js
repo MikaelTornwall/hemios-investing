@@ -19,7 +19,8 @@ export default {
           netIncome: -228000000,
           changeInCash: -19400000,
           changeToLiabilities: -12100000,
-          otherCashflowsFromFinancingActivities: -250800000
+          otherCashflowsFromFinancingActivities: -250800000,
+          investments: 1233313123
         }
       },
       {
@@ -39,7 +40,8 @@ export default {
           netIncome: -18600000,
           changeInCash: 210200000,
           changeToLiabilities: -1600000,
-          otherCashflowsFromFinancingActivities: -332900000
+          otherCashflowsFromFinancingActivities: -332900000,
+          investments: 4333313123
         }
       },
       {
@@ -59,7 +61,8 @@ export default {
           netIncome: 163000000,
           changeInCash: -101400000,
           changeToLiabilities: 3100000,
-          otherCashflowsFromFinancingActivities: -255800000
+          otherCashflowsFromFinancingActivities: -255800000,
+          investments: 12333133
         }
       },
       {
@@ -79,7 +82,8 @@ export default {
           netIncome: 53700000,
           changeInCash: 157300000,
           changeToLiabilities: -8400000,
-          otherCashflowsFromFinancingActivities: -293300000
+          otherCashflowsFromFinancingActivities: -293300000,
+          investments: 923333123
         }
       }
     ],
