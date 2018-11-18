@@ -60,6 +60,7 @@ class LineChart extends React.Component {
 
     // Calls a function that reverses the order of dates within the data array
     // dataToBeAdded = this.reverseTimelineOfValue(dataToBeAdded, category);
+
     // Adds each year/quarter and corresponding value into an object
     // Creates an array for each company that contains time - value -pairs for each date
     // Adds these objects into an array of a company in question
