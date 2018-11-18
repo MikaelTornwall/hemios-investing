@@ -1,4 +1,7 @@
 import React from 'react';
+import AAL from '../assets/AALfinancials.js';
+import ABBV from '../assets/ABBVfinancials.js';
+import AEE from '../assets/AEEfinancials.js';
 import {
   XYPlot,
   XAxis,
@@ -8,39 +11,79 @@ import {
   Crosshair
 } from 'react-vis';
 
-const DATA = [
-  [
-    { x: 'q1', y: 10 },
-    { x: 'q2', y: 7 },
-    { x: 'q3', y: 10 },
-    { x: 'q4', y: 8 }
-  ],
-  [{ x: 'q1', y: 12 }, { x: 'q2', y: 5 }, { x: 'q3', y: 8 }, { x: 'q4', y: 3 }],
-  [{ x: 'q1', y: 7 }, { x: 'q2', y: 2 }, { x: 'q3', y: 3 }, { x: 'q4', y: 4 }],
-  [
-    { x: 'q1', y: 15 },
-    { x: 'q2', y: 10 },
-    { x: 'q3', y: 10 },
-    { x: 'q4', y: 12 }
-  ]
-];
-
 class LineChart extends React.Component {
   state = {
     crosshairValues: [],
-    data: []
+    financialData: [AAL, ABBV, AEE],
+    companies: [],
+    category: 'cashflowStatementHistory',
+    kpi: null,
+    timeline: ['2014-12-31', '2015-12-31', '2016-12-31', '2017-12-31'],
+    graphData: []
   };
 
   async componentDidMount() {
-    await this.setState({ data: DATA });
+    await this.props.companies.map(company =>
+      this.setState(prevState => ({
+        companies: [...prevState.companies, company.text]
+      }))
+    );
+
+    if (this.state.kpi == null) {
+      this.setState({ kpi: this.props.kpi.value });
+    }
+
+    // This function generates the graph
+    if (this.state.kpi !== null && this.state.companies.length > 0) {
+      this.state.companies.map(company => {
+        return this.generateGraphdata(
+          this.state.financialData,
+          company,
+          this.state.category,
+          this.state.kpi,
+          this.state.timeline
+        );
+      });
+    }
   }
 
+  generateGraphdata = (data, company, category, kpi, timeline) => {
+    const arr = [];
+
+    // Let's make the selection array display dates in chronological order
+    // timeline = timeline.reverse()
+
+    // Finds the specific company data
+    let dataToBeAdded = data.find(c => c.name === company);
+
+    // Calls a function that reverses the order of dates within the data array
+    dataToBeAdded = this.reverseTimelineOfValue(dataToBeAdded, category);
+
+    // Adds each year/quarter and corresponding value into an object
+    // Creates an array for each company that contains time - value -pairs for each date
+    // Adds these objects into an array of a company in question
+    for (let i = 0; i < timeline.length; i++) {
+      arr.push({
+        x: timeline[i],
+        y: dataToBeAdded[i][timeline[i]][kpi] / 1000000
+      });
+    }
+
+    this.setState(prevState => ({ graphData: [...prevState.graphData, arr] }));
+  };
+
+  reverseTimelineOfValue = (company, kpiSet) => {
+    return company.values[kpiSet].reverse();
+  };
+
+  // Empties the crosshairValues
   _onMouseLeave = () => {
     this.setState({ crosshairValues: [] });
   };
 
+  // Adds the crosshairValues of the company in question, so they can be displayed during mouseOver event
   _onNearestX = (value, { index }) => {
-    this.setState({ crosshairValues: DATA.map(d => d[index]) });
+    this.setState({ crosshairValues: this.state.graphData.map(d => d[index]) });
   };
 
   render() {
@@ -54,8 +97,8 @@ class LineChart extends React.Component {
         >
           <HorizontalGridLines />
           <XAxis />
-          <YAxis />
-          {DATA.map(d => (
+          <YAxis title="m$" />
+          {this.state.graphData.map(d => (
             <LineSeries onNearestX={this._onNearestX} data={d} />
           ))}
           <Crosshair values={this.state.crosshairValues} />

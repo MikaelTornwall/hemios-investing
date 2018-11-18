@@ -18,7 +18,8 @@ export default {
           netIncome: 523000000,
           dividendsPaid: -431000000,
           changeToLiabilities: 0,
-          otherCashflowsFromFinancingActivities: -57000000
+          otherCashflowsFromFinancingActivities: -57000000,
+          investments: 3123123123
         }
       },
       {
@@ -38,7 +39,8 @@ export default {
           changeInCash: -283000000,
           dividendsPaid: -416000000,
           changeToLiabilities: 19000000,
-          otherCashflowsFromFinancingActivities: -100000000
+          otherCashflowsFromFinancingActivities: -100000000,
+          investments: 312313123
         }
       },
       {
@@ -58,7 +60,8 @@ export default {
           changeInCash: 287000000,
           dividendsPaid: -402000000,
           changeToLiabilities: -2000000,
-          otherCashflowsFromFinancingActivities: -30000000
+          otherCashflowsFromFinancingActivities: -30000000,
+          investments: 912312312
         }
       },
       {
@@ -78,7 +81,8 @@ export default {
           changeInCash: -25000000,
           dividendsPaid: -390000000,
           changeToLiabilities: 10000000,
-          otherCashflowsFromFinancingActivities: -30000000
+          otherCashflowsFromFinancingActivities: -30000000,
+          investments: 11231123
         }
       }
     ],
