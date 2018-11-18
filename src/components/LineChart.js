@@ -18,7 +18,7 @@ class LineChart extends React.Component {
     companies: [],
     category: 'cashflowStatementHistory',
     kpi: null,
-    timeline: ['2014-12-31', '2015-12-31', '2016-12-31', '2017-12-31'],
+    timeline: ['2017-12-31', '2016-12-31', '2015-12-31', '2014-12-31'],
     graphData: []
   };
 
@@ -57,15 +57,14 @@ class LineChart extends React.Component {
     let dataToBeAdded = data.find(c => c.name === company);
 
     // Calls a function that reverses the order of dates within the data array
-    dataToBeAdded = this.reverseTimelineOfValue(dataToBeAdded, category);
-
+    // dataToBeAdded = this.reverseTimelineOfValue(dataToBeAdded, category);
     // Adds each year/quarter and corresponding value into an object
     // Creates an array for each company that contains time - value -pairs for each date
     // Adds these objects into an array of a company in question
     for (let i = 0; i < timeline.length; i++) {
       arr.push({
         x: timeline[i],
-        y: dataToBeAdded[i][timeline[i]][kpi] / 1000000
+        y: dataToBeAdded.values[category][i][timeline[i]][kpi] / 1000000
       });
     }
 

@@ -41,7 +41,7 @@ export default class View extends Component {
         />
         <Grid columns={3}>
           {this.state.selectedKPIs.map(selectedKPI => (
-            <Grid.Column>
+            <Grid.Column key={selectedKPI}>
               <GraphCard
                 kpi={selectedKPI}
                 companies={this.state.selectedCompanies}
