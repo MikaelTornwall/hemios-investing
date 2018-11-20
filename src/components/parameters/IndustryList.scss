@@ -1,0 +1,16 @@
+.IndustryList {
+
+    .segment {
+        max-height: 250px;
+        // height: 100%;
+        // overflow-y: scroll;
+
+        .item {
+            cursor: pointer;
+        }
+    }
+
+    .companyList {
+        max-height: 150px;
+    }
+}

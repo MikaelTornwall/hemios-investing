@@ -1,9 +1,39 @@
 import React, { Component } from 'react';
 import { Container, Dropdown } from 'semantic-ui-react';
+import { parameterFilter } from './ParameterFilter';
+import IndustryList from './IndustryList';
+
+const CompanyFilter = parameterFilter(IndustryList, 'Filter by Industry');
+
+// TODO: make api request to fetch real data
+const industriesNCompanies = {
+  Telcom: ['Elisa', 'DNA', 'Telia'],
+  Restaurant: ['Starbucks', 'McDonalds', 'Cheesecake Factory'],
+  Software: ['Apple', 'Google', 'Amazon'],
+  Clothing: ['Superdry', 'Lululemon', 'Tommy Hilfiger']
+};
+
+// TODO: sort industriesNCompanies alphabetically for IndustryList
+
+// Get all companies
+const companyLists = Object.values(industriesNCompanies);
+
+// Put them into a 1d list
+let companies = [];
+companyLists.map(
+  companiesList => (companies = companies.concat(companiesList))
+);
+
+let allCompanies = companies.map((company, index) => ({
+  key: index,
+  value: company,
+  text: company
+}));
 
 export default class CompanySelect extends Component {
   componentDidMount() {
     this.props.populate(this.props.dataProvider.getAllCompaniesList());
+    //this.props.populate(allCompanies);
   }
   render() {
     return (
@@ -24,6 +54,11 @@ export default class CompanySelect extends Component {
             value=""
           />
         </Container>
+        <CompanyFilter
+          data={industriesNCompanies}
+          selectedItems={this.props.selectedItems}
+          handleChange={this.props.handleChange}
+        />
       </>
     );
   }

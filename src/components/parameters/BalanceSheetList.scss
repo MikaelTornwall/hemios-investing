@@ -1,0 +1,16 @@
+.BalanceSheetList {
+
+    .accordion {
+        height: 250px;
+        // height: 100%;
+        // overflow-y: scroll;
+
+        .item {
+            cursor: pointer;
+        }
+    }
+
+    .kpiList {
+        max-height: 150px;
+    }
+}

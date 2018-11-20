@@ -1,0 +1,58 @@
+{
+  "kpiCategories": [
+    {
+      "name": "balance sheet",
+      "categories": [
+        {
+          "category": "assets",
+          "kpis": [
+            "cash and cash equivalents",
+            "short term investments",
+            "net receivables",
+            "inventory",
+            "other current assets",
+            "total current assets",
+            "long term investments",
+            "property plant and equipment",
+            "goodwill",
+            "intangible assets",
+            "accumulated amortization",
+            "other assets",
+            "deferred long term asset charges",
+            "total assets"
+          ]
+        },
+        {
+          "category": "liabilities",
+          "kpis": [
+            "accounts payable",
+            "short/current long term debt",
+            "other current liabilities",
+            "total current liabilities",
+            "long term debt",
+            "other liabilities",
+            "deferred long term liability charges",
+            "minority interest",
+            "negative goodwill",
+            "total liabilities"
+          ]
+        },
+        {
+          "category": "equity",
+          "kpis": [
+            "misc. stocks options warrants",
+            "redeemable preferred stock",
+            "preferred stock",
+            "common stock",
+            "retained earnings",
+            "treasury stock",
+            "capital surplus",
+            "other stockholder equity",
+            "total stockholder equity",
+            "net tangible assets"
+          ]
+        }
+      ]
+    }
+  ]
+}
