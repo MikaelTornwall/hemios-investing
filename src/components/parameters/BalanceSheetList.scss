@@ -1,13 +1,21 @@
 .BalanceSheetList {
 
-    .accordion {
-        height: 250px;
+    > .accordion {
+        max-height: 250px;
         // height: 100%;
         // overflow-y: scroll;
+
+        > .content {
+            margin-top: -20px;
+        }
 
         .item {
             cursor: pointer;
         }
+    }
+
+    .kpiTypes {
+        margin-left: 20px !important;
     }
 
     .kpiList {

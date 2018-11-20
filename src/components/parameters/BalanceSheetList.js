@@ -1,23 +1,9 @@
 import React, { Component } from 'react';
-import { Icon, Container, Accordion, List, Segment } from 'semantic-ui-react';
+import { Container, Accordion, List, Segment } from 'semantic-ui-react';
 import './BalanceSheetList.scss';
 
 export default class BalanceSheetList extends Component {
-  state = {
-    activeIndex: 0
-  };
-
-  handleAccordionClick = (e, titleProps) => {
-    const { index } = titleProps;
-    const { activeIndex } = this.state;
-    const newIndex = activeIndex === index ? -1 : index;
-
-    this.setState({ activeIndex: newIndex });
-  };
-
   render() {
-    const { activeIndex } = this.state;
-
     const scrollBar = {
       height: '100%',
       overflowY: 'scroll'
@@ -25,11 +11,10 @@ export default class BalanceSheetList extends Component {
 
     const balanceSheet = this.props.data;
 
-    console.log('BalanceSheetList: ' + balanceSheet.name);
-    console.log('BalanceSheetList: ' + balanceSheet.categories[0].category);
-    console.log('BalanceSheetList: ' + balanceSheet.categories[0].kpis);
+    // console.log('BalanceSheetList: ' + balanceSheet.name);
+    // console.log('BalanceSheetList: ' + balanceSheet.categories[0].category);
+    // console.log('BalanceSheetList: ' + balanceSheet.categories[0].kpis);
 
-    // let kpiCategories = [];
     let list;
     let con;
     let kpiCategories = balanceSheet.categories.map(
@@ -44,22 +29,17 @@ export default class BalanceSheetList extends Component {
             <List>{list}</List>
           </Segment>
         )),
-        { key: cat.category, title: cat.category, content: con }
+        { key: cat.category, title: cat.category, content: { content: con } }
       )
     );
 
-    // const kpiCategories = [
-    //   { key: 'panel-1a', title: 'Level 1A', content: 'Level 1A Contents' },
-    //   { key: 'panel-ba', title: 'Level 1B', content: 'Level 1B Contents' },
-    // ]
-
     const kpiCats = (
       <div>
-        <Accordion.Accordion panels={kpiCategories} style={scrollBar} />
+        <Accordion.Accordion panels={kpiCategories} className="kpiTypes" />
       </div>
     );
 
-    const rootPanels = [
+    const rootPanel = [
       {
         key: balanceSheet.name,
         title: balanceSheet.name,
@@ -68,13 +48,13 @@ export default class BalanceSheetList extends Component {
     ];
 
     const AccordionNested = () => (
-      <Accordion defaultActiveIndex={0} panels={rootPanels} styled />
+      <Accordion defaultActiveIndex={0} panels={rootPanel} />
     );
 
     return (
       <>
         <Container className="BalanceSheetList">
-          <AccordionNested style={scrollBar} />
+          <AccordionNested />
         </Container>
       </>
     );

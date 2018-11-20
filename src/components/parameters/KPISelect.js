@@ -37,7 +37,11 @@ export default class KPISelect extends Component {
             }
             value=""
           />
-          <KPIFilter data={balanceSheet} />
+          <KPIFilter
+            data={balanceSheet}
+            selectedItems={this.props.selectedItems}
+            handleChange={this.props.handleChange}
+          />
         </Container>
       </>
     );
