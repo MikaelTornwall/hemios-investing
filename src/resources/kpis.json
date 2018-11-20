@@ -1,55 +1,108 @@
 {
   "kpiCategories": [
     {
-      "name": "balance sheet",
+      "name": "Balance sheet",
       "categories": [
         {
-          "category": "assets",
+          "category": "Assets",
           "kpis": [
-            "cash and cash equivalents",
-            "short term investments",
-            "net receivables",
-            "inventory",
-            "other current assets",
-            "total current assets",
-            "long term investments",
-            "property plant and equipment",
-            "goodwill",
-            "intangible assets",
-            "accumulated amortization",
-            "other assets",
-            "deferred long term asset charges",
-            "total assets"
+            {
+              "cash": "Cash"
+            },
+            {
+              "shortTermInvestments": "Short term investments"
+            },
+            {
+              "netReceivables": "Net receivables"
+            },
+            {
+              "inventory": "Inventory"
+            },
+            {
+              "otherCurrentAssets": "Other current assets"
+            },
+            {
+              "totalCurrentAssets": "Total current assets"
+            },
+            {
+              "longTermInvestments": "Long term investments"
+            },
+            {
+              "propertyPlantEquipment": "Property plant and equipment"
+            },
+            {
+              "goodWill": "Goodwill"
+            },
+            {
+              "intangibleAssets": "Intangible assets"
+            },
+            {
+              "otherAssets": "Other assets"
+            },
+            {
+              "deferredLongTermAssetCharges": "Deferred long term asset charges"
+            },
+            {
+              "totalAssets": "Total assets"
+            }
           ]
         },
         {
-          "category": "liabilities",
+          "category": "Liabilities",
           "kpis": [
-            "accounts payable",
-            "short/current long term debt",
-            "other current liabilities",
-            "total current liabilities",
-            "long term debt",
-            "other liabilities",
-            "deferred long term liability charges",
-            "minority interest",
-            "negative goodwill",
-            "total liabilities"
+            {
+              "accountsPayable": "Accounts payable"
+            },
+            {
+              "shortLongTermDebt": "Short/current long term debt"
+            },
+            {
+              "otherCurrentLiab": "Other current liabilities"
+            },
+            {
+              "totalCurrentLiabilities": "Total current liabilities"
+            },
+            {
+              "longTermDebt": "Long term debt"
+            },
+            {
+              "otherLiab": "Other liabilities"
+            },
+            {
+              "deferredLongTermLiab": "Deferred long term liability charges"
+            },
+            {
+              "minorityInterest": "Minority interest"
+            },
+            {
+              "totalLiab": "Total liabilities"
+            }
           ]
         },
         {
-          "category": "equity",
+          "category": "Equity",
           "kpis": [
-            "misc. stocks options warrants",
-            "redeemable preferred stock",
-            "preferred stock",
-            "common stock",
-            "retained earnings",
-            "treasury stock",
-            "capital surplus",
-            "other stockholder equity",
-            "total stockholder equity",
-            "net tangible assets"
+            {
+              "commonStock": "Common stock"
+            },
+            {
+              "retainedEarnings": "Retained earnings"
+            },
+            {
+              "treasuryStock": "Treasury stock"
+            },
+            {
+              "capitalSurplus": "Capital surplus"
+            },
+            {
+              "otherStockholderEquity": "Other stockholder equity"
+            },
+            {
+              "totalStockholderEquity": "Total stockholder equity"
+            },
+            {
+              "netTangibleAssets": "Net tangible assets"
+            }
           ]
         }
       ]

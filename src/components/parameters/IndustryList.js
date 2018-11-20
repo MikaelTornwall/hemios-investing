@@ -23,11 +23,22 @@ export default class IndustryList extends Component {
       overflowY: 'scroll'
     };
 
+    const industriesNcompanies = this.props.contentData.getAllCompaniesWithIndustry();
+
+    // Test: see whats inside the file from dataProvider
+    // Object.keys(industriesNcompanies).map(industry => (
+    //   industriesNcompanies[industry].map(company => {
+    //     //console.log(Object.keys(company)[0]) // get ticker from company
+    //     //console.log(Object.values(company)[0]) // get company name if ticker isnt needed
+    //     //console.log(company[Object.keys(company)[0]]) // get company name
+    //   })
+    // ));
+
     return (
       <>
         <Container className="IndustryList">
           <Segment style={scrollBar}>
-            {Object.keys(this.props.contentData).map((industry, index) => (
+            {Object.keys(industriesNcompanies).map((industry, index) => (
               <Accordion key={industry}>
                 <Accordion.Title
                   active={activeIndex === index}
@@ -40,20 +51,22 @@ export default class IndustryList extends Component {
                 <Accordion.Content active={activeIndex === index}>
                   <Segment style={scrollBar} className="companyList">
                     <List>
-                      {this.props.contentData[industry].map(company => {
+                      {industriesNcompanies[industry].map(company => {
                         let selectedCompanies = [];
                         this.props.selectedItems.map(item =>
-                          selectedCompanies.push(item.text)
+                          selectedCompanies.push(item.value)
                         );
+                        let companyName = Object.values(company)[0];
+                        let ticker = Object.keys(company)[0];
                         // filter out selected companies
-                        if (!selectedCompanies.includes(company)) {
+                        if (!selectedCompanies.includes(ticker)) {
                           return (
                             <List.Item
-                              key={company}
-                              value={company}
+                              key={ticker}
+                              value={ticker}
                               onClick={this.props.handleChange}
                             >
-                              {company}
+                              {companyName}
                             </List.Item>
                           );
                         }

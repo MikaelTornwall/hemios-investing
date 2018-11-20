@@ -6,34 +6,42 @@ import IndustryList from './IndustryList';
 const CompanyFilter = parameterFilter(IndustryList, 'Filter by Industry');
 
 // TODO: make api request to fetch real data
-const industriesNCompanies = {
-  Telcom: ['Elisa', 'DNA', 'Telia'],
-  Restaurant: ['Starbucks', 'McDonalds', 'Cheesecake Factory'],
-  Software: ['Apple', 'Google', 'Amazon'],
-  Clothing: ['Superdry', 'Lululemon', 'Tommy Hilfiger']
-};
+// const industriesNCompanies = {
+//   Telcom: ['Elisa', 'DNA', 'Telia'],
+//   Restaurant: ['Starbucks', 'McDonalds', 'Cheesecake Factory'],
+//   Software: ['Apple', 'Google', 'Amazon'],
+//   Clothing: ['Superdry', 'Lululemon', 'Tommy Hilfiger']
+// };
 
-// TODO: sort industriesNCompanies alphabetically for IndustryList
+// // Get all companies
+// const companyLists = Object.values(industriesNCompanies);
 
-// Get all companies
-const companyLists = Object.values(industriesNCompanies);
+// // Put them into a 1d list
+// let companies = [];
+// companyLists.map(
+//   companiesList => (companies = companies.concat(companiesList))
+// );
 
-// Put them into a 1d list
-let companies = [];
-companyLists.map(
-  companiesList => (companies = companies.concat(companiesList))
-);
-
-let allCompanies = companies.map((company, index) => ({
-  key: index,
-  value: company,
-  text: company
-}));
+// let allCompanies = companies.map((company, index) => ({
+//   key: index,
+//   value: company,
+//   text: company
+// }));
 
 export default class CompanySelect extends Component {
   componentDidMount() {
     this.props.populate(this.props.dataProvider.getAllCompaniesList());
     //this.props.populate(allCompanies);
+    console.log(
+      'All companies from dataProvider Key: ' +
+        this.props.dataProvider.getAllCompaniesList()[0].key
+    );
+    console.log(
+      'Value: ' + this.props.dataProvider.getAllCompaniesList()[0].value
+    );
+    console.log(
+      'Text: ' + this.props.dataProvider.getAllCompaniesList()[0].text
+    );
   }
   render() {
     return (
@@ -55,7 +63,7 @@ export default class CompanySelect extends Component {
           />
         </Container>
         <CompanyFilter
-          data={industriesNCompanies}
+          data={this.props.dataProvider}
           selectedItems={this.props.selectedItems}
           handleChange={this.props.handleChange}
         />

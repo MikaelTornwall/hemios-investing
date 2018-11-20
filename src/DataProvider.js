@@ -6,6 +6,10 @@ import EVHC from './assets/EVHCfinancials.js';
 
 import inv from './assets/investments.js';
 import dep from './assets/depreciation.js';
+import cash from './assets/cash.js';
+
+import industriesNcompanies from './assets/industriesNcompanies.js';
+import kpisWithCategory from './resources/kpis.json';
 
 import _ from 'lodash';
 
@@ -15,7 +19,7 @@ export default class DataProvider {
 
     //this test data should be coming from the api eventually^^
     this.companyData = [AAL, ABB, AEE, COG, EVHC];
-    this.KPIs = [inv, dep];
+    this.KPIs = [inv, dep, cash];
   }
 
   getAllCompaniesList() {
@@ -29,6 +33,16 @@ export default class DataProvider {
     });
     return companies;
   }
+
+  // Return object with industries as key and belonging companies list as value
+  getAllCompaniesWithIndustry() {
+    return industriesNcompanies.Industries;
+  }
+
+  getAllKpisWithCategory() {
+    return kpisWithCategory.kpiCategories;
+  }
+
   getAllKPIsList() {
     const KPIs = [];
     _.each(this.KPIs, item => {
@@ -38,6 +52,7 @@ export default class DataProvider {
         text: item.name
       });
     });
+    console.log(KPIs);
     return KPIs;
   }
 

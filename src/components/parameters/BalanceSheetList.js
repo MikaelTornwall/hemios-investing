@@ -11,19 +11,35 @@ export default class BalanceSheetList extends Component {
 
     const balanceSheet = this.props.data;
 
-    // console.log('BalanceSheetList: ' + balanceSheet.name);
+    console.log('BalanceSheetList: ' + balanceSheet.name);
     // console.log('BalanceSheetList: ' + balanceSheet.categories[0].category);
     // console.log('BalanceSheetList: ' + balanceSheet.categories[0].kpis);
 
     let list;
     let con;
+    let kpiName;
+    let kpiVal;
+    let selectedKPIs;
     let kpiCategories = balanceSheet.categories.map(
       cat => (
-        (list = cat.kpis.map(kpi => (
-          <List.Item key={kpi} value={kpi} onClick={this.props.handleChange}>
-            {kpi}
-          </List.Item>
-        ))),
+        (list = cat.kpis.map(
+          kpi => (
+            (selectedKPIs = []),
+            this.props.selectedItems.map(item => selectedKPIs.push(item.value)),
+            (kpiName = Object.values(kpi)[0]),
+            (kpiVal = Object.keys(kpi)[0]),
+            // filter out selected kpis
+            !selectedKPIs.includes(kpiVal) && (
+              <List.Item
+                key={kpiVal}
+                value={kpiVal}
+                onClick={this.props.handleChange}
+              >
+                {kpiName}
+              </List.Item>
+            )
+          )
+        )),
         (con = (
           <Segment style={scrollBar} className="kpiList">
             <List>{list}</List>
