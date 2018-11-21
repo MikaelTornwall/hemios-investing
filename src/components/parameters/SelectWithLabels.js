@@ -44,7 +44,7 @@ export function selectWithLabels(WrappedSelectComponent, type) {
       if (type === 1) {
         this.colorOptions(options);
       }
-      this.sortItemsAphabetically(options);
+      options = this.sortItemsAphabetically(options);
       this.options = options;
     };
 

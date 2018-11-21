@@ -1,0 +1,111 @@
+{
+  "kpiCategories": [
+    {
+      "name": "Balance sheet",
+      "categories": [
+        {
+          "category": "Assets",
+          "kpis": [
+            {
+              "cash": "Cash"
+            },
+            {
+              "shortTermInvestments": "Short term investments"
+            },
+            {
+              "netReceivables": "Net receivables"
+            },
+            {
+              "inventory": "Inventory"
+            },
+            {
+              "otherCurrentAssets": "Other current assets"
+            },
+            {
+              "totalCurrentAssets": "Total current assets"
+            },
+            {
+              "longTermInvestments": "Long term investments"
+            },
+            {
+              "propertyPlantEquipment": "Property plant and equipment"
+            },
+            {
+              "goodWill": "Goodwill"
+            },
+            {
+              "intangibleAssets": "Intangible assets"
+            },
+            {
+              "otherAssets": "Other assets"
+            },
+            {
+              "deferredLongTermAssetCharges": "Deferred long term asset charges"
+            },
+            {
+              "totalAssets": "Total assets"
+            }
+          ]
+        },
+        {
+          "category": "Liabilities",
+          "kpis": [
+            {
+              "accountsPayable": "Accounts payable"
+            },
+            {
+              "shortLongTermDebt": "Short/current long term debt"
+            },
+            {
+              "otherCurrentLiab": "Other current liabilities"
+            },
+            {
+              "totalCurrentLiabilities": "Total current liabilities"
+            },
+            {
+              "longTermDebt": "Long term debt"
+            },
+            {
+              "otherLiab": "Other liabilities"
+            },
+            {
+              "deferredLongTermLiab": "Deferred long term liability charges"
+            },
+            {
+              "minorityInterest": "Minority interest"
+            },
+            {
+              "totalLiab": "Total liabilities"
+            }
+          ]
+        },
+        {
+          "category": "Equity",
+          "kpis": [
+            {
+              "commonStock": "Common stock"
+            },
+            {
+              "retainedEarnings": "Retained earnings"
+            },
+            {
+              "treasuryStock": "Treasury stock"
+            },
+            {
+              "capitalSurplus": "Capital surplus"
+            },
+            {
+              "otherStockholderEquity": "Other stockholder equity"
+            },
+            {
+              "totalStockholderEquity": "Total stockholder equity"
+            },
+            {
+              "netTangibleAssets": "Net tangible assets"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

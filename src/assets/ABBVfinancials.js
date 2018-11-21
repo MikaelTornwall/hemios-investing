@@ -1,6 +1,6 @@
 export default {
   name: 'ABB Company',
-  id: 'ABB',
+  id: 'ABBV',
   values: {
     cashflowStatementHistory: [
       {
