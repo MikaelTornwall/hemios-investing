@@ -1,22 +1,20 @@
+// @import src\semantic\src\site\globals\site.variables
+
 .header-bar {
-    height: auto;
-    width: 100%;
-    padding: 20px;
+  height: auto;
+  width: 100%;
+  padding: 20px;
 
+  display: flex;
+  justify-content: space-between;
+
+  .leftSided {
     display: flex;
-    justify-content: space-between;
+    align-self: center;
+  }
 
-    .leftSided {
-        display: flex;
-        align-self: center;
-    }
-
-    .rightSided {
-        display: flex;
-        align-self: center;
-    }
-}
-
-.fa-icon {
-    font-size: 30px;
+  .rightSided {
+    display: flex;
+    align-self: center;
+  }
 }

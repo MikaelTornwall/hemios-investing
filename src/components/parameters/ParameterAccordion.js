@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Icon, Label } from 'semantic-ui-react';
+import { Container, Icon } from 'semantic-ui-react';
+
+import './ParameterAccordion.scss';
 
 export function parameterAccordion(WrappedComponent, title) {
   class ParameterAccordion extends Component {
@@ -10,14 +12,14 @@ export function parameterAccordion(WrappedComponent, title) {
     render() {
       return (
         <>
-          <Label as="a" onClick={this.handleClick}>
+          <h5 className="clickable-header" as="a" onClick={this.handleClick}>
             <Icon
-              name="dropdown"
+              name="chevron down"
               rotated={this.props.visible ? undefined : 'counterclockwise'}
               size="small"
             />
             {title}
-          </Label>
+          </h5>
           <Container>
             <WrappedComponent
               updateSelection={this.props.updateSelection}

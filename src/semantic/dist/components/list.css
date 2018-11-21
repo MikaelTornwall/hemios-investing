@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.4.1 - List
+ * # Semantic UI 2.4.2 - List
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -7,7 +7,6 @@
  * http://opensource.org/licenses/MIT
  *
  */
-
 
 /*******************************
             List
@@ -33,11 +32,9 @@ ol.ui.list:last-child,
   padding-bottom: 0em;
 }
 
-
 /*******************************
             Content
 *******************************/
-
 
 /* List Item */
 ul.ui.list li,
@@ -161,7 +158,7 @@ ol.ui.list ol li,
 .ui.list > .item .header {
   display: block;
   margin: 0em;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -183,7 +180,7 @@ ol.ui.list ol li,
 .ui.list .list > a.item,
 .ui.list > a.item {
   cursor: pointer;
-  color: #4183C4;
+  color: #4183c4;
 }
 .ui.list .list > a.item:hover,
 .ui.list > a.item:hover {
@@ -200,7 +197,7 @@ ol.ui.list ol li,
 .ui.list .list > .item a.header,
 .ui.list > .item a.header {
   cursor: pointer;
-  color: #4183C4 !important;
+  color: #4183c4 !important;
 }
 .ui.list .list > .item a.header:hover,
 .ui.list > .item a.header:hover {
@@ -208,23 +205,22 @@ ol.ui.list ol li,
 }
 
 /* Floated Content */
-.ui[class*="left floated"].list {
+.ui[class*='left floated'].list {
   float: left;
 }
-.ui[class*="right floated"].list {
+.ui[class*='right floated'].list {
   float: right;
 }
-.ui.list .list > .item [class*="left floated"],
-.ui.list > .item [class*="left floated"] {
+.ui.list .list > .item [class*='left floated'],
+.ui.list > .item [class*='left floated'] {
   float: left;
   margin: 0em 1em 0em 0em;
 }
-.ui.list .list > .item [class*="right floated"],
-.ui.list > .item [class*="right floated"] {
+.ui.list .list > .item [class*='right floated'],
+.ui.list > .item [class*='right floated'] {
   float: right;
   margin: 0em 0em 0em 1em;
 }
-
 
 /*******************************
             Coupling
@@ -254,11 +250,9 @@ ol.ui.list ol li,
   padding-bottom: 0em;
 }
 
-
 /*******************************
             Types
 *******************************/
-
 
 /*-------------------
       Horizontal
@@ -308,11 +302,9 @@ ol.ui.list ol li,
   display: inline-block;
 }
 
-
 /*******************************
              States
 *******************************/
-
 
 /*-------------------
        Disabled
@@ -337,11 +329,9 @@ ol.ui.list ol li,
   color: rgba(0, 0, 0, 0.87);
 }
 
-
 /*******************************
            Variations
 *******************************/
-
 
 /*-------------------
        Inverted
@@ -383,19 +373,19 @@ ol.ui.list ol li,
        Aligned
 --------------------*/
 
-.ui.list[class*="top aligned"] .image,
-.ui.list[class*="top aligned"] .content,
-.ui.list [class*="top aligned"] {
+.ui.list[class*='top aligned'] .image,
+.ui.list[class*='top aligned'] .content,
+.ui.list [class*='top aligned'] {
   vertical-align: top !important;
 }
-.ui.list[class*="middle aligned"] .image,
-.ui.list[class*="middle aligned"] .content,
-.ui.list [class*="middle aligned"] {
+.ui.list[class*='middle aligned'] .image,
+.ui.list[class*='middle aligned'] .content,
+.ui.list [class*='middle aligned'] {
   vertical-align: middle !important;
 }
-.ui.list[class*="bottom aligned"] .image,
-.ui.list[class*="bottom aligned"] .content,
-.ui.list [class*="bottom aligned"] {
+.ui.list[class*='bottom aligned'] .image,
+.ui.list[class*='bottom aligned'] .content,
+.ui.list [class*='bottom aligned'] {
   vertical-align: bottom !important;
 }
 
@@ -454,8 +444,10 @@ ol.ui.list ol li,
   margin: 0em;
   color: rgba(0, 0, 0, 0.4);
   border-radius: 0.5em;
-  -webkit-transition: 0.1s color ease, 0.1s padding-left ease, 0.1s background-color ease;
-  transition: 0.1s color ease, 0.1s padding-left ease, 0.1s background-color ease;
+  -webkit-transition: 0.1s color ease, 0.1s padding-left ease,
+    0.1s background-color ease;
+  transition: 0.1s color ease, 0.1s padding-left ease,
+    0.1s background-color ease;
 }
 .ui.selection.list .list > .item:last-child,
 .ui.selection.list > .item:last-child {
@@ -512,8 +504,10 @@ ol.ui.list ol li,
 --------------------*/
 
 .ui.animated.list > .item {
-  -webkit-transition: 0.25s color ease 0.1s, 0.25s padding-left ease 0.1s, 0.25s background-color ease 0.1s;
-  transition: 0.25s color ease 0.1s, 0.25s padding-left ease 0.1s, 0.25s background-color ease 0.1s;
+  -webkit-transition: 0.25s color ease 0.1s, 0.25s padding-left ease 0.1s,
+    0.25s background-color ease 0.1s;
+  transition: 0.25s color ease 0.1s, 0.25s padding-left ease 0.1s,
+    0.25s background-color ease 0.1s;
 }
 .ui.animated.list:not(.horizontal) > .item:hover {
   padding-left: 1em;
@@ -551,9 +545,9 @@ ul.ui.list li:before,
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list > .item:before {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   pointer-events: none;
   position: absolute;
   top: auto;
@@ -622,13 +616,13 @@ ol.ui.list li:before,
   top: auto;
   left: auto;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   pointer-events: none;
   margin-left: -1.25rem;
   counter-increment: ordered;
-  content: counters(ordered, ".") " ";
+  content: counters(ordered, '.') ' ';
   text-align: right;
   color: rgba(0, 0, 0, 0.87);
   vertical-align: middle;
@@ -864,18 +858,18 @@ ol.ui.horizontal.list li:before,
 }
 
 /* Very Relaxed */
-.ui[class*="very relaxed"].list:not(.horizontal) > .item:not(:first-child) {
+.ui[class*='very relaxed'].list:not(.horizontal) > .item:not(:first-child) {
   padding-top: 0.85714286em;
 }
-.ui[class*="very relaxed"].list:not(.horizontal) > .item:not(:last-child) {
+.ui[class*='very relaxed'].list:not(.horizontal) > .item:not(:last-child) {
   padding-bottom: 0.85714286em;
 }
-.ui.horizontal[class*="very relaxed"].list .list > .item:not(:first-child),
-.ui.horizontal[class*="very relaxed"].list > .item:not(:first-child) {
+.ui.horizontal[class*='very relaxed'].list .list > .item:not(:first-child),
+.ui.horizontal[class*='very relaxed'].list > .item:not(:first-child) {
   padding-left: 1.5rem;
 }
-.ui.horizontal[class*="very relaxed"].list .list > .item:not(:last-child),
-.ui.horizontal[class*="very relaxed"].list > .item:not(:last-child) {
+.ui.horizontal[class*='very relaxed'].list .list > .item:not(:last-child),
+.ui.horizontal[class*='very relaxed'].list > .item:not(:last-child) {
   padding-right: 1.5rem;
 }
 
@@ -940,14 +934,10 @@ ol.ui.horizontal.list li:before,
   font-size: 1.71428571rem;
 }
 
-
 /*******************************
          Theme Overrides
 *******************************/
 
-
-
 /*******************************
     User Variable Overrides
 *******************************/
-

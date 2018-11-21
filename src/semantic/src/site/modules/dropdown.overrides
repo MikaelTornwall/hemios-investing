@@ -1,3 +1,8 @@
 /*******************************
         User Overrides
 *******************************/
+
+.ui.dropdown > .dropdown.icon::before {
+  font-family: 'Icons';
+  content: '\f078' !important;
+}

@@ -1,3 +1,11 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@hemios-blue: #6358EC;
+@hemios-black: #2F2F2F;
+@hemios-dark-grey: #7C7C7C;
+@hemios-medium-grey: #D5D5D5;
+@hemios-light-grey: #f3f3f3;
+
+@fontName: 'Ubuntu';

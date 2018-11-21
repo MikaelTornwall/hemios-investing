@@ -1,24 +1,23 @@
 import React from 'react';
-import { Icon, Header, Button } from 'semantic-ui-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Icon, Button } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
 import './HeaderBar.scss';
+import logo from '../assets/logo.svg';
 
 const HeaderBar = () => {
   return (
     <>
       <div className={'header-bar'}>
         <div className="leftSided">
-          <Icon name="area graph" size="huge" />
-          <Header as="h3">Hemios Investing</Header>
+          <img src={logo} size="small" />
         </div>
         <div className="rightSided">
           <NavLink to="/dashboard">
             <Button className="primary">To Dashboard</Button>
           </NavLink>
           <Button className="basic primary">Login</Button>
-          <FontAwesomeIcon className="fa-icon" icon="user-circle" />
+          <Icon color="hemios-medium-grey" name="user circle" size="big" />
         </div>
       </div>
     </>
