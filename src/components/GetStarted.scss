@@ -14,12 +14,33 @@
 
   .steps-n-video {
     display: flex;
+    flex-direction: row;
+
+    .stps {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video {
+      flex: 1;
+      align-self: center;
+
+      img {
+        width: 100% !important;
+      }
+
+      .cta {
+        margin-top: 40px;
+        text-align: center;
+      }
+    }
   }
 
   .step {
     display: flex;
     margin-right: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 
     span {
       min-width: 45px;
@@ -40,7 +61,8 @@
 
   .heading {
     display: flex;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 
     > img {
       margin-left: 10px;
