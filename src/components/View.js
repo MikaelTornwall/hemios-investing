@@ -8,7 +8,12 @@ export default class View extends Component {
   state = {
     selectedCompanies: [],
     selectedKPIs: [],
-    selectedTimeInterval: []
+    selectedTimeInterval: [],
+    visibilities: {
+      companySelectVisible: true,
+      KPISelectVisible: false,
+      timeIntervalSelectVisible: false
+    }
   };
 
   updateCompanies = selectedCompanies => {
@@ -27,6 +32,9 @@ export default class View extends Component {
       selectedTimeInterval: selectedTimeInterval
     });
   };
+  setVisibilities = visibilities => {
+    this.setState({ visibilities: visibilities });
+  };
   render() {
     return (
       <Grid stackable columns={2}>
@@ -35,12 +43,18 @@ export default class View extends Component {
             updateCompanies={this.updateCompanies}
             updateKPIs={this.updateKPIs}
             updateTimeInterval={this.updateTimeInterval}
+            setVisibilities={this.setVisibilities}
+            companySelectVisible={this.state.visibilities.companySelectVisible}
+            KPISelectVisible={this.state.visibilities.KPISelectVisible}
+            timeIntervalSelectVisible={
+              this.state.visibilities.timeIntervalSelectVisible
+            }
             {...this.props}
             tab={1}
           />
         </Grid.Column>
         <Grid.Column>
-          <Grid columns={16}>
+          <Grid columns={3}>
             {this.state.selectedKPIs.map(selectedKPI => (
               <Grid.Column key={selectedKPI}>
                 <GraphCard

@@ -62,18 +62,16 @@ export function selectWithLabels(WrappedSelectComponent, type) {
     render() {
       return (
         <>
-          {this.props.visible && (
-            <Container>
-              <WrappedSelectComponent
-                handleChange={this.handleChange}
-                populate={this.populate}
-                selectedItems={this.selectedItems}
-                options={this.options}
-                visible={this.props.visible}
-                dataProvider={this.props.dataProvider}
-              />
-            </Container>
-          )}
+          <Container>
+            <WrappedSelectComponent
+              handleChange={this.handleChange}
+              populate={this.populate}
+              selectedItems={this.selectedItems}
+              options={this.options}
+              visible={this.props.visible}
+              dataProvider={this.props.dataProvider}
+            />
+          </Container>
           <Container>
             {this.selectedItems.map(selectedItem => (
               <SelectLabel

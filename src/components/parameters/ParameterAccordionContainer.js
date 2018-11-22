@@ -22,47 +22,47 @@ const TimeIntervalSelectAccordion = parameterAccordion(
 );
 
 export default class ParameterAccordionContainer extends Component {
-  state = {
-    companySelectVisible: true,
-    KPISelectVisible: false,
-    timeIntervalSelectVisible: false
-  };
-
   showCompanySelect = show => {
     if (this.props.mobile) {
-      this.setState({
+      this.props.setVisibilities({
         companySelectVisible: show,
         KPISelectVisible: false,
         timeIntervalSelectVisible: false
       });
     } else {
-      this.setState({
-        companySelectVisible: show
+      this.props.setVisibilities({
+        companySelectVisible: show,
+        KPISelectVisible: this.props.KPISelectVisible,
+        timeIntervalSelectVisible: this.props.timeIntervalSelectVisible
       });
     }
   };
   showKPISelect = show => {
     if (this.props.mobile) {
-      this.setState({
+      this.props.setVisibilities({
         companySelectVisible: false,
         KPISelectVisible: show,
         timeIntervalSelectVisible: false
       });
     } else {
-      this.setState({
-        KPISelectVisible: show
+      this.props.setVisibilities({
+        companySelectVisible: this.props.companySelectVisible,
+        KPISelectVisible: show,
+        timeIntervalSelectVisible: this.props.timeIntervalSelectVisible
       });
     }
   };
   showTimeIntervalSelect = show => {
     if (this.props.mobile) {
-      this.setState({
+      this.props.setVisibilities({
         companySelectVisible: false,
         KPISelectVisible: false,
         timeIntervalSelectVisible: show
       });
     } else {
-      this.setState({
+      this.props.setVisibilities({
+        companySelectVisible: this.props.companySelectVisible,
+        KPISelectVisible: this.props.KPISelectVisible,
         timeIntervalSelectVisible: show
       });
     }
@@ -74,7 +74,7 @@ export default class ParameterAccordionContainer extends Component {
         <GridRow>
           <GridColumn>
             <CompanySelectAccordion
-              visible={this.state.companySelectVisible}
+              visible={this.props.companySelectVisible}
               showAccordion={this.showCompanySelect}
               updateSelection={this.props.updateCompanies}
               dataProvider={this.props.dataProvider}
@@ -82,7 +82,7 @@ export default class ParameterAccordionContainer extends Component {
           </GridColumn>
           <GridColumn>
             <KPISelectAccordion
-              visible={this.state.KPISelectVisible}
+              visible={this.props.KPISelectVisible}
               showAccordion={this.showKPISelect}
               updateSelection={this.props.updateKPIs}
               dataProvider={this.props.dataProvider}
@@ -90,7 +90,7 @@ export default class ParameterAccordionContainer extends Component {
           </GridColumn>
           <GridColumn>
             <TimeIntervalSelectAccordion
-              visible={this.state.timeIntervalSelectVisible}
+              visible={this.props.timeIntervalSelectVisible}
               showAccordion={this.showTimeIntervalSelect}
               updateSelection={this.props.updateTimeInterval}
             />

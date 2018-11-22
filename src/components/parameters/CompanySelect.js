@@ -46,27 +46,31 @@ export default class CompanySelect extends Component {
   render() {
     return (
       <>
-        <Container>
-          <Dropdown
-            fluid
-            search
-            selection
-            selectOnBlur={false}
-            options={this.props.options}
-            onChange={this.props.handleChange}
-            placeholder={
-              this.props.selectedItems.length === 0
-                ? 'Search for company'
-                : 'Search for another company'
-            }
-            value=""
-          />
-        </Container>
-        <CompanyFilter
-          data={this.props.dataProvider}
-          selectedItems={this.props.selectedItems}
-          handleChange={this.props.handleChange}
-        />
+        {this.props.visible && (
+          <>
+            <Container>
+              <Dropdown
+                fluid
+                search
+                selection
+                selectOnBlur={false}
+                options={this.props.options}
+                onChange={this.props.handleChange}
+                placeholder={
+                  this.props.selectedItems.length === 0
+                    ? 'Search for company'
+                    : 'Search for another company'
+                }
+                value=""
+              />
+            </Container>
+            <CompanyFilter
+              data={this.props.dataProvider}
+              selectedItems={this.props.selectedItems}
+              handleChange={this.props.handleChange}
+            />
+          </>
+        )}
       </>
     );
   }

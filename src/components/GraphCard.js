@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LineChart from './LineChart';
 // import BarChart from './BarChart';
-import { Card } from 'semantic-ui-react';
+import { Card, Container } from 'semantic-ui-react';
 
 export default class GraphCard extends Component {
   render() {

@@ -22,27 +22,29 @@ export default class KPISelect extends Component {
   render() {
     return (
       <>
-        <Container>
-          <Dropdown
-            fluid
-            search
-            selection
-            selectOnBlur={false}
-            options={this.props.options}
-            onChange={this.props.handleChange}
-            placeholder={
-              this.props.selectedItems.length === 0
-                ? 'Search for KPI'
-                : 'Search for another KPI'
-            }
-            value=""
-          />
-          <KPIFilter
-            data={this.props.dataProvider}
-            selectedItems={this.props.selectedItems}
-            handleChange={this.props.handleChange}
-          />
-        </Container>
+        {this.props.visible && (
+          <Container>
+            <Dropdown
+              fluid
+              search
+              selection
+              selectOnBlur={false}
+              options={this.props.options}
+              onChange={this.props.handleChange}
+              placeholder={
+                this.props.selectedItems.length === 0
+                  ? 'Search for KPI'
+                  : 'Search for another KPI'
+              }
+              value=""
+            />
+            <KPIFilter
+              data={this.props.dataProvider}
+              selectedItems={this.props.selectedItems}
+              handleChange={this.props.handleChange}
+            />
+          </Container>
+        )}
       </>
     );
   }
