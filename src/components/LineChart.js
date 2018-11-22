@@ -21,13 +21,15 @@ class LineChart extends React.Component {
     category: 'cashflowStatementHistory',
     kpi: null,
     timeline: ['2017-12-31', '2016-12-31', '2015-12-31', '2014-12-31'],
-    graphData: []
+    graphData: [],
+    colors: []
   };
 
   async componentDidMount() {
     await this.props.companies.map(company =>
       this.setState(prevState => ({
-        companies: [...prevState.companies, company.text]
+        companies: [...prevState.companies, company.text],
+        colors: [...prevState.colors, company.color]
       }))
     );
 
@@ -64,7 +66,7 @@ class LineChart extends React.Component {
     // Adds each year/quarter and corresponding value into an object
     // Creates an array for each company that contains time - value -pairs for each date
     // Adds these objects into an array of a company in question
-    for (let i = 0; i < timeline.length; i++) {
+    for (let i = timeline.length - 1; i >= 0; i--) {
       arr.push({
         x: timeline[i],
         y: dataToBeAdded.values[category][i][timeline[i]][kpi] / 1000000
@@ -100,8 +102,12 @@ class LineChart extends React.Component {
           <HorizontalGridLines />
           <XAxis />
           <YAxis title="m$" />
-          {this.state.graphData.map(d => (
-            <LineSeries onNearestX={this._onNearestX} data={d} />
+          {this.state.graphData.map((d, i) => (
+            <LineSeries
+              onNearestX={this._onNearestX}
+              data={d}
+              color={this.state.colors[i]}
+            />
           ))}
           <Crosshair values={this.state.crosshairValues} />
         </XYPlot>

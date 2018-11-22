@@ -28,8 +28,6 @@ export default class View extends Component {
     });
   };
   render() {
-    console.log(this.state.selectedKPIs);
-    console.log(this.state.selectedCompanies);
     return (
       <>
         <ParameterAccordionContainer
