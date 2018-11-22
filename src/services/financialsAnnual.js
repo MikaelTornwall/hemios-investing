@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const baseUrl =
-  'https://polar-springs-21656.herokuapp.com/api/financial_data_quarterly';
+const baseUrl = 'https://polar-springs-21656.herokuapp.com/api/financial_data';
 
 const getAll = async () => {
   const req = await axios.get(baseUrl);
