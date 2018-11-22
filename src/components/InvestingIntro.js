@@ -6,7 +6,7 @@ const InvestingIntro = () => {
   return (
     <>
       <div className="InvestingIntro">
-        <h1>What is value investing?</h1>
+        <h3>What is value investing?</h3>
         <p>
           Value investing is a way to invest in stocks over longer periods of
           time. A value investor makes his gains by investing in companies that
