@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Item, Grid } from 'semantic-ui-react';
 
 import GraphCard from './GraphCard';
-import ParameterAccordionContainer from '../containers/ParameterAccordionContainer';
+import ParameterAccordionContainer from './parameters/ParameterAccordionContainer';
 
 export default class View extends Component {
   state = {
@@ -37,15 +37,17 @@ export default class View extends Component {
           {...this.props}
           tab={1}
         />
-        <Grid columns={3}>
+        <Grid columns={1}>
           {this.state.selectedKPIs.map(selectedKPI => (
-            <Grid.Column key={selectedKPI}>
-              <GraphCard
-                kpi={selectedKPI}
-                companies={this.state.selectedCompanies}
-                dataProvider={this.props.dataProvider}
-              />
-            </Grid.Column>
+            <Grid.Row key={selectedKPI}>
+              <Grid.Column>
+                <GraphCard
+                  kpi={selectedKPI}
+                  companies={this.state.selectedCompanies}
+                  dataProvider={this.props.dataProvider}
+                />
+              </Grid.Column>
+            </Grid.Row>
           ))}
         </Grid>
       </>

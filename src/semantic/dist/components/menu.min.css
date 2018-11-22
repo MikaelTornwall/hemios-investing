@@ -1018,8 +1018,8 @@
 }
 .ui.grey.menu .active.item,
 .ui.menu .grey.active.item {
-  border-color: #767676 !important;
-  color: #767676 !important;
+  border-color: #7c7c7c !important;
+  color: #7c7c7c !important;
 }
 .ui.inverted.menu {
   border: 0 solid transparent;
@@ -1217,7 +1217,7 @@
 }
 .ui.inverted.grey.menu,
 .ui.inverted.menu .grey.active.item {
-  background-color: #767676;
+  background-color: #7c7c7c;
 }
 .ui.inverted.grey.menu .item:before {
   background-color: rgba(34, 36, 38, 0.1);

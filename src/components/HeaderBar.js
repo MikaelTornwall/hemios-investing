@@ -17,7 +17,7 @@ const HeaderBar = () => {
             <Button className="primary">To Dashboard</Button>
           </NavLink>
           <Button className="basic primary">Login</Button>
-          <Icon color="hemios-medium-grey" name="user circle" size="big" />
+          <Icon color="grey" name="user circle" size="big" />
         </div>
       </div>
     </>

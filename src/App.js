@@ -28,7 +28,7 @@ class App extends Component {
     this.resize();
   }
   resize() {
-    this.setState({ mobile: window.innerWidth >= 768 });
+    this.setState({ mobile: window.innerWidth <= 768 });
   }
   render() {
     return (

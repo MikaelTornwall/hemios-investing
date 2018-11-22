@@ -1435,7 +1435,7 @@
 .ui.grid > .grey.row,
 .ui.grid > .grey.column,
 .ui.grid > .row > .grey.column {
-  background-color: #767676 !important;
+  background-color: #7c7c7c !important;
   color: #ffffff;
 }
 
@@ -2071,3 +2071,7 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.row .sidebar {
+  width: 200px;
+}

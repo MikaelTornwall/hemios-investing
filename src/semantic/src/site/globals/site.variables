@@ -8,4 +8,6 @@
 @hemios-medium-grey: #D5D5D5;
 @hemios-light-grey: #f3f3f3;
 
+@grey: @hemios-dark-grey;
+
 @fontName: 'Ubuntu';

@@ -1243,7 +1243,7 @@
 .ui.grid > .grey.column,
 .ui.grid > .grey.row,
 .ui.grid > .row > .grey.column {
-  background-color: #767676 !important;
+  background-color: #7c7c7c !important;
   color: #fff;
 }
 .ui.grid > .black.column,
@@ -1794,4 +1794,7 @@
   .ui[class*='tablet only'].grid.grid.grid:not(.computer) {
     display: none !important;
   }
+}
+.row .sidebar {
+  width: 200px;
 }

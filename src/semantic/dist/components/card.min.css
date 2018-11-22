@@ -506,14 +506,14 @@ a.ui.card:hover {
 .ui.cards > .grey.card,
 .ui.grey.card,
 .ui.grey.cards > .card {
-  -webkit-box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #767676, 0 1px 3px 0 #d4d4d5;
-  box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #767676, 0 1px 3px 0 #d4d4d5;
+  -webkit-box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #7c7c7c, 0 1px 3px 0 #d4d4d5;
+  box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #7c7c7c, 0 1px 3px 0 #d4d4d5;
 }
 .ui.cards > .grey.card:hover,
 .ui.grey.card:hover,
 .ui.grey.cards > .card:hover {
-  -webkit-box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #838383, 0 1px 3px 0 #bcbdbd;
-  box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #838383, 0 1px 3px 0 #bcbdbd;
+  -webkit-box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #898989, 0 1px 3px 0 #bcbdbd;
+  box-shadow: 0 0 0 1px #d4d4d5, 0 2px 0 0 #898989, 0 1px 3px 0 #bcbdbd;
 }
 .ui.black.card,
 .ui.black.cards > .card,

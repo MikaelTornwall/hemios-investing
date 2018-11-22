@@ -1,3 +1,10 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.container.hemios-sidebar {
+  @media only screen and (min-width: @tabletBreakpoint) {
+    width: 400px !important;
+  }
+  margin: 0px !important;
+}
