@@ -25,12 +25,20 @@
 
     @media only screen and (max-width : 767px) {
 
-        .GetStarted, .LandingIntro {
+        .LandingIntro {
             padding: 30px;
         }
 
         .InvestingIntro {
             width: 70%;
+        }
+
+        .GetStarted {
+            padding: 30px;
+
+            .steps-n-video {
+                flex-direction: column;
+            }
         }
 
         .ui.huge.button {
