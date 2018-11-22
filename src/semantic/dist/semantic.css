@@ -19429,6 +19429,10 @@ ol.ui.horizontal.list li:before,
 /*******************************
          Site Overrides
 *******************************/
+
+body ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
 /*!
  * # Semantic UI 2.4.2 - Step
  * http://github.com/semantic-org/semantic-ui/
@@ -23804,8 +23808,8 @@ ol.ui.horizontal.list li:before,
          Site Overrides
 *******************************/
 
-.row .sidebar {
-  width: 200px;
+.column.hemios-sidebar {
+  width: 400px !important;
 }
 /*
  * # Semantic - Menu

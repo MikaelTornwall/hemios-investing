@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Item, Grid } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 
 import GraphCard from './GraphCard';
 import ParameterAccordionContainer from './parameters/ParameterAccordionContainer';
@@ -29,28 +29,30 @@ export default class View extends Component {
   };
   render() {
     return (
-      <>
-        <ParameterAccordionContainer
-          updateCompanies={this.updateCompanies}
-          updateKPIs={this.updateKPIs}
-          updateTimeInterval={this.updateTimeInterval}
-          {...this.props}
-          tab={1}
-        />
-        <Grid columns={1}>
-          {this.state.selectedKPIs.map(selectedKPI => (
-            <Grid.Row key={selectedKPI}>
-              <Grid.Column>
+      <Grid stackable columns={2}>
+        <Grid.Column className={'hemios-sidebar'}>
+          <ParameterAccordionContainer
+            updateCompanies={this.updateCompanies}
+            updateKPIs={this.updateKPIs}
+            updateTimeInterval={this.updateTimeInterval}
+            {...this.props}
+            tab={1}
+          />
+        </Grid.Column>
+        <Grid.Column>
+          <Grid columns={16}>
+            {this.state.selectedKPIs.map(selectedKPI => (
+              <Grid.Column key={selectedKPI}>
                 <GraphCard
                   kpi={selectedKPI}
                   companies={this.state.selectedCompanies}
                   dataProvider={this.props.dataProvider}
                 />
               </Grid.Column>
-            </Grid.Row>
-          ))}
-        </Grid>
-      </>
+            ))}
+          </Grid>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

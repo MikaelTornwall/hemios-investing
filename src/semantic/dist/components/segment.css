@@ -879,3 +879,7 @@
 /*******************************
          Site Overrides
 *******************************/
+
+body ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}

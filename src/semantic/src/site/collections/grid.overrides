@@ -1,7 +1,6 @@
 /*******************************
          Site Overrides
 *******************************/
-
-.row .sidebar {
-  width: 200px;
+.column.hemios-sidebar {
+  width: 400px !important;
 }

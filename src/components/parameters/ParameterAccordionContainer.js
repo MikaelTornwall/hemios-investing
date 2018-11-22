@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, GridColumn, GridRow, Container } from 'semantic-ui-react';
+import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
 
 import './ParameterAccordionContainer.scss';
 import CompanySelect from './CompanySelect';
@@ -70,35 +70,33 @@ export default class ParameterAccordionContainer extends Component {
 
   render() {
     return (
-      <Container className={'hemios-sidebar'}>
-        <Grid columns={1} stackable>
-          <GridRow>
-            <GridColumn>
-              <CompanySelectAccordion
-                visible={this.state.companySelectVisible}
-                showAccordion={this.showCompanySelect}
-                updateSelection={this.props.updateCompanies}
-                dataProvider={this.props.dataProvider}
-              />
-            </GridColumn>
-            <GridColumn>
-              <KPISelectAccordion
-                visible={this.state.KPISelectVisible}
-                showAccordion={this.showKPISelect}
-                updateSelection={this.props.updateKPIs}
-                dataProvider={this.props.dataProvider}
-              />
-            </GridColumn>
-            <GridColumn>
-              <TimeIntervalSelectAccordion
-                visible={this.state.timeIntervalSelectVisible}
-                showAccordion={this.showTimeIntervalSelect}
-                updateSelection={this.props.updateTimeInterval}
-              />
-            </GridColumn>
-          </GridRow>
-        </Grid>
-      </Container>
+      <Grid columns={1} stackable>
+        <GridRow>
+          <GridColumn>
+            <CompanySelectAccordion
+              visible={this.state.companySelectVisible}
+              showAccordion={this.showCompanySelect}
+              updateSelection={this.props.updateCompanies}
+              dataProvider={this.props.dataProvider}
+            />
+          </GridColumn>
+          <GridColumn>
+            <KPISelectAccordion
+              visible={this.state.KPISelectVisible}
+              showAccordion={this.showKPISelect}
+              updateSelection={this.props.updateKPIs}
+              dataProvider={this.props.dataProvider}
+            />
+          </GridColumn>
+          <GridColumn>
+            <TimeIntervalSelectAccordion
+              visible={this.state.timeIntervalSelectVisible}
+              showAccordion={this.showTimeIntervalSelect}
+              updateSelection={this.props.updateTimeInterval}
+            />
+          </GridColumn>
+        </GridRow>
+      </Grid>
     );
   }
 }
