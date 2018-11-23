@@ -41,7 +41,7 @@ const GetStarted = () => {
             </div>
           </List>
           <div className="video">
-            <img src={video} size="large" />
+            <img src={video} alt="video" size="large" />
             <div className="cta">
               <NavLink to="/dashboard">
                 <Button className="primary huge">Try it out!</Button>
