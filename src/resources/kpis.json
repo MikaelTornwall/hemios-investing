@@ -106,6 +106,65 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Income statement",
+      "kpis": [
+        {
+          "totalRevenue": "Total Revenue"
+        },
+        {
+          "costOfRevenue": "Cost of Revenue"
+        },
+        {
+          "grossProfit": "Gross Profit"
+        },
+        {
+          "researchDevelopment": "Research Development"
+        },
+        {
+          "sellingGeneralAdministrative": "Selling General/ Administrative Expenses"
+        },
+        {
+          "nonRecurring": "Non Recurring Expenses"
+        },
+        {
+          "otherOperatingExpenses": "Other Expenses"
+        },
+        {
+          "totalOperatingExpenses": "Total Operating Expenses"
+        },
+        {
+          "operatingIncome": "Operating Income or Loss"
+        },
+        {
+          "totalOtherIncomeExpenseNet": "Total Other Income/Expenses Net"
+        },
+        {
+          "ebit": "Earnings Before Interest and Taxes"
+        },
+        {
+          "interestExpense": "Interest Expense"
+        },
+        {
+          "incomeBeforeTax": "Income Before Tax"
+        },
+        {
+          "incomeTaxExpense": "Income Tax Expense"
+        },
+        {
+          "minorityInterest": "Minority Interest"
+        },
+        {
+          "netIncomeFromContinuingOps": "Net Income From Continuing Ops"
+        },
+        {
+          "netIncome": "Net Income"
+        },
+        {
+          "netIncomeApplicableToCommonShares": "Net Income Applicable To Common Shares"
+        }
+      ]
     }
   ]
 }
