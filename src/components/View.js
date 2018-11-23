@@ -47,7 +47,6 @@ export default class View extends Component {
   };
 
   render() {
-    console.log('DP in view: ', this.props.dataProvider);
     return (
       <>
         <Container className={'hemios-sidebar'}>
