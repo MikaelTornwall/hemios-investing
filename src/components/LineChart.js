@@ -64,7 +64,9 @@ class LineChart extends React.Component {
     for (let i = timeline.length - 1; i >= 0; i--) {
       arr.push({
         x: timeline[i],
-        y: dataToBeAdded.values[category][i][timeline[i]][kpi] / 1000000
+        y: Math.floor(
+          dataToBeAdded.values[category][i][timeline[i]][kpi] / 1000000
+        )
       });
     }
 
@@ -104,7 +106,35 @@ class LineChart extends React.Component {
               color={this.state.colors[i]}
             />
           ))}
-          <Crosshair values={this.state.crosshairValues} />
+          <Crosshair values={this.state.crosshairValues}>
+            <div
+              style={{
+                background: 'rgba(50,50,50,0.93)',
+                color: 'rgba(200,200,200,0.87)',
+                width: 80,
+                padding: 3,
+                fontSize: 8,
+                borderRadius: 5
+              }}
+            >
+              <div>
+                <strong>
+                  {this.state.crosshairValues.length > 0
+                    ? this.state.crosshairValues[0].x
+                    : null}
+                  :
+                </strong>
+              </div>
+              {this.state.crosshairValues.map((value, i) => (
+                <div>
+                  <span style={{ color: this.state.colors[i] }}>
+                    {this.state.companies[i]}:
+                  </span>{' '}
+                  {value.y} m$
+                </div>
+              ))}
+            </div>
+          </Crosshair>
         </XYPlot>
       </>
     );
