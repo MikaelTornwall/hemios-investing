@@ -36,6 +36,7 @@ export default class View extends Component {
     this.setState({ visibilities: visibilities });
   };
   render() {
+    console.log('DP in view: ', this.props.dataProvider);
     return (
       <>
         <Container className={'hemios-sidebar'}>

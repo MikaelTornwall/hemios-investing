@@ -19,6 +19,7 @@ export default class GraphCard extends Component {
   };
 
   render() {
+    console.log('DP in GraphCard: ', this.props.dataProvider);
     return (
       <Card style={{ width: 400 }}>
         <Card.Content header={this.makeHeader()} />
@@ -26,7 +27,7 @@ export default class GraphCard extends Component {
           <LineChart
             kpi={this.props.kpi}
             companies={this.props.companies}
-            dataProvider={this.props.dataProvider.companyData}
+            dataProvider={this.props.dataProvider.companies}
           />
         </Card.Content>
       </Card>

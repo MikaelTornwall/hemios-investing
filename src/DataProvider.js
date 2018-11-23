@@ -12,7 +12,7 @@ import _ from 'lodash';
 
 export default class DataProvider {
   constructor(data, industryData, kpisData) {
-    //this.companies = data;
+    this.companies = data;
     this.industries = industryData;
     this.kpis = kpisData;
 
@@ -23,7 +23,9 @@ export default class DataProvider {
 
   getAllCompaniesList() {
     const companies = [];
-    _.each(this.companyData, item => {
+
+    // _.each(this.companyData, item => {
+    _.each(this.companies, item => {
       companies.push({
         key: item.id,
         value: item.id,
@@ -44,15 +46,44 @@ export default class DataProvider {
   }
 
   getAllKPIsList() {
-    const KPIs = [];
-    _.each(this.KPIs, item => {
-      KPIs.push({
-        key: item.id,
-        value: item.id,
-        text: item.name
+    let KPIs = [];
+    // _.each(this.KPIs, item => {
+    //   KPIs.push({
+    //     key: item.id,
+    //     value: item.id,
+    //     text: item.name
+    //   });
+    // });
+    // console.log(KPIs);
+    // return KPIs;
+    const balanceSheetCats = this.kpis[0].kpiCategories[0].categories;
+
+    const balanceSheetKPIs = [];
+    _.each(balanceSheetCats, category => {
+      _.each(category.kpis, kpi => {
+        let kpiName = Object.values(kpi)[0];
+        let kpiId = Object.keys(kpi)[0];
+        balanceSheetKPIs.push({
+          key: kpiId,
+          value: kpiId,
+          text: kpiName
+        });
       });
     });
-    console.log(KPIs);
+
+    const incomeStatementKPIs = [];
+    _.each(this.kpis[0].kpiCategories[1].kpis, kpi => {
+      let kpiName = Object.values(kpi)[0];
+      let kpiId = Object.keys(kpi)[0];
+      incomeStatementKPIs.push({
+        key: kpiId,
+        value: kpiId,
+        text: kpiName
+      });
+    });
+
+    KPIs = balanceSheetKPIs.concat(incomeStatementKPIs);
+    //console.log(KPIs)
     return KPIs;
   }
 
