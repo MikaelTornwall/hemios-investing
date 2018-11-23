@@ -11,10 +11,6 @@ export default class BalanceSheetList extends Component {
 
     const balanceSheet = this.props.data;
 
-    console.log('BalanceSheetList: ' + balanceSheet.name);
-    // console.log('BalanceSheetList: ' + balanceSheet.categories[0].category);
-    // console.log('BalanceSheetList: ' + balanceSheet.categories[0].kpis);
-
     let list;
     let con;
     let kpiName;
