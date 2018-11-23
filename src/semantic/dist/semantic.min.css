@@ -10286,6 +10286,9 @@ i.icon.yoast,
 i.icon.youtube,
 i.icon.youtube.square {
   font-family: brand-icons;
+}
+.hemios-question {
+  float: right;
 } /*!
  * # Semantic UI 2.4.2 - Image
  * http://github.com/semantic-org/semantic-ui/

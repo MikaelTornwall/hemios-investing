@@ -4803,3 +4803,7 @@ i.icon.youtube.square {
 /*******************************
          Site Overrides
 *******************************/
+
+.hemios-question {
+  float: right;
+}

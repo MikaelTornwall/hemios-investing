@@ -7,29 +7,30 @@ import './ViewTabs.scss';
 
 const ViewTabs = props => (
   <Tab
+    renderActiveOnly={false}
     className={'tabs'}
     menu={{ secondary: true, pointing: true }}
     panes={[
       {
-        menuItem: 'Tab 1',
-        render: () => (
-          <Tab.Pane attached={false}>
+        menuItem: 'fun',
+        pane: (
+          <Tab.Pane key={1}>
             <View {...props} />
           </Tab.Pane>
         )
       },
       {
-        menuItem: 'Tab 2',
-        render: () => (
-          <Tab.Pane attached={false}>
+        menuItem: 'serious',
+        pane: (
+          <Tab.Pane key={2}>
             <View {...props} />
           </Tab.Pane>
         )
       },
       {
-        menuItem: 'Tab 3',
-        render: () => (
-          <Tab.Pane attached={false}>
+        menuItem: 'random',
+        pane: (
+          <Tab.Pane key={3}>
             <View {...props} />
           </Tab.Pane>
         )

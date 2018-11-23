@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon, Button } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
+import _ from 'lodash';
 
 import './HeaderBar.scss';
 import logo from '../assets/logo.svg';
@@ -10,12 +11,16 @@ const HeaderBar = () => {
     <>
       <div className={'header-bar'}>
         <div className="leftSided">
-          <img src={logo} size="small" />
+          <NavLink to="/">
+            <img src={logo} size="small" />
+          </NavLink>
         </div>
         <div className="rightSided">
-          <NavLink to="/dashboard">
-            <Button className="primary">To Dashboard</Button>
-          </NavLink>
+          {_.endsWith(window.location.href, '/dashboard') ? null : (
+            <NavLink to="/dashboard">
+              <Button className="primary">Try it out!</Button>
+            </NavLink>
+          )}
           <Button className="basic primary">Login</Button>
           <Icon color="grey" name="user circle" size="big" />
         </div>
