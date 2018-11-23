@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import financialsService from './services/financials';
 import industryService from './services/industries';
-//import kpisService from './services/kpis';
+import kpisService from './services/kpis';
 
 //Fontawesome library
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -25,10 +25,10 @@ class App extends Component {
   async componentDidMount() {
     const data = await financialsService.getAll();
     const industriesData = await industryService.getAll();
-    //const kpisData = await kpisService.getAll();
+    const kpisData = await kpisService.getAll();
     this.setState({
       data: data,
-      dataProvider: new DataProvider(data, industriesData)
+      dataProvider: new DataProvider(data, industriesData, kpisData)
     });
 
     window.addEventListener('resize', this.resize.bind(this));
