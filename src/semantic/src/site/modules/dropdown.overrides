@@ -6,3 +6,7 @@
   font-family: 'Icons';
   content: '\f078' !important;
 }
+
+.search.selection.dropdown {
+  margin-bottom: 20px;
+}

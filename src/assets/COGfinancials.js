@@ -1,5 +1,5 @@
 export default {
-  name: 'Coffeeshop',
+  name: 'Coffee Time',
   id: 'COG',
   values: {
     cashflowStatementHistory: [

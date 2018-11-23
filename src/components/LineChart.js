@@ -134,8 +134,8 @@ class LineChart extends React.Component {
       <>
         <XYPlot
           onMouseLeave={this._onMouseLeave}
-          width={350}
-          height={200}
+          width={parseInt(this.props.graphSize.w)}
+          height={parseInt(this.props.graphSize.h)}
           xType="ordinal"
         >
           <HorizontalGridLines />

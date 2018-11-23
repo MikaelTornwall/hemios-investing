@@ -3930,10 +3930,16 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @media only screen and (min-width: 768px) {
   .ui.container.hemios-sidebar {
     width: 400px !important;
+    padding-right: 40px !important;
+    border-right: 2px solid #f3f3f3;
   }
 }
 .hemios-parameter {
   margin: 11px;
+  border-bottom: 2px solid #f3f3f3;
+}
+.hemios-size-parameter {
+  margin-top: 20px;
 } /*!
  * # Semantic UI 2.4.2 - Divider
  * http://github.com/semantic-org/semantic-ui/
@@ -14120,6 +14126,14 @@ body ::-webkit-scrollbar-track {
 }
 .ui.segment.active.tab {
   overflow: auto;
+}
+.hemios-sidebar > .ui.segment {
+  border: none !important;
+}
+.ui.segment {
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 } /*!
  * # Semantic UI 2.4.2 - Step
  * http://github.com/semantic-org/semantic-ui/
@@ -24177,6 +24191,9 @@ select.ui.dropdown {
 .ui.dropdown > .dropdown.icon::before {
   font-family: Icons;
   content: '\f078' !important;
+}
+.search.selection.dropdown {
+  margin-bottom: 20px;
 } /*!
  * # Semantic UI 2.4.2 - Video
  * http://github.com/semantic-org/semantic-ui/

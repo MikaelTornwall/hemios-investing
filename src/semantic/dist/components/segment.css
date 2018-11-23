@@ -886,3 +886,11 @@ body ::-webkit-scrollbar-track {
 .ui.segment.active.tab {
   overflow: auto;
 }
+.hemios-sidebar > .ui.segment {
+  border: none !important;
+}
+.ui.segment {
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}

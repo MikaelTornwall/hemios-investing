@@ -5,6 +5,8 @@
 .ui.container.hemios-sidebar {
   @media only screen and (min-width: @tabletBreakpoint) {
     width: 400px !important;
+    padding-right: 40px !important;
+    border-right: 2px solid #f3f3f3;
   }
   margin: 0px !important;
   overflow: hidden;
@@ -13,4 +15,9 @@
 
 .hemios-parameter {
   margin: 11px;
+  border-bottom: 2px solid #f3f3f3;
+}
+
+.hemios-size-parameter {
+  margin-top: 20px;
 }

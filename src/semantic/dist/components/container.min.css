@@ -109,8 +109,14 @@
 @media only screen and (min-width: 768px) {
   .ui.container.hemios-sidebar {
     width: 400px !important;
+    padding-right: 40px !important;
+    border-right: 2px solid #f3f3f3;
   }
 }
 .hemios-parameter {
   margin: 11px;
+  border-bottom: 2px solid #f3f3f3;
+}
+.hemios-size-parameter {
+  margin-top: 20px;
 }

@@ -1,5 +1,5 @@
 export default {
-  name: 'Eheheh',
+  name: 'EHE Marketing',
   id: 'EVHC',
   values: {
     cashflowStatementHistory: [

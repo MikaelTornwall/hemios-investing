@@ -7,6 +7,7 @@ import KPISelect from './KPISelect';
 import TimeIntervalSelect from './TimeIntervalSelect';
 import { parameterAccordion } from './ParameterAccordion';
 import { selectWithLabels } from './SelectWithLabels';
+import GraphSizeSelect from './GraphSizeSelect.js';
 
 const CompanySelectAccordion = parameterAccordion(
   selectWithLabels(CompanySelect, 1),
@@ -71,34 +72,35 @@ export default class ParameterAccordionContainer extends Component {
   render() {
     return (
       <Grid columns={1} stackable>
-        <GridRow>
-          <GridColumn>
-            <CompanySelectAccordion
-              visible={this.props.companySelectVisible}
-              showAccordion={this.showCompanySelect}
-              updateSelection={this.props.updateCompanies}
-              dataProvider={this.props.dataProvider}
-              stickyContext={this.props.stickyContext}
-            />
-          </GridColumn>
-          <GridColumn>
-            <KPISelectAccordion
-              visible={this.props.KPISelectVisible}
-              showAccordion={this.showKPISelect}
-              updateSelection={this.props.updateKPIs}
-              dataProvider={this.props.dataProvider}
-              stickyContext={this.props.stickyContext}
-            />
-          </GridColumn>
-          <GridColumn>
-            <TimeIntervalSelectAccordion
-              visible={this.props.timeIntervalSelectVisible}
-              showAccordion={this.showTimeIntervalSelect}
-              updateSelection={this.props.updateTimeInterval}
-              stickyContext={this.props.stickyContext}
-            />
-          </GridColumn>
-        </GridRow>
+        <GridColumn>
+          <CompanySelectAccordion
+            visible={this.props.companySelectVisible}
+            showAccordion={this.showCompanySelect}
+            updateSelection={this.props.updateCompanies}
+            dataProvider={this.props.dataProvider}
+            stickyContext={this.props.stickyContext}
+          />
+
+          <KPISelectAccordion
+            visible={this.props.KPISelectVisible}
+            showAccordion={this.showKPISelect}
+            updateSelection={this.props.updateKPIs}
+            dataProvider={this.props.dataProvider}
+            stickyContext={this.props.stickyContext}
+          />
+
+          <TimeIntervalSelectAccordion
+            visible={this.props.timeIntervalSelectVisible}
+            showAccordion={this.showTimeIntervalSelect}
+            updateSelection={this.props.updateTimeInterval}
+            stickyContext={this.props.stickyContext}
+          />
+
+          <GraphSizeSelect
+            onGraphSizeChange={this.props.onGraphSizeChange}
+            size={this.props.graphSize}
+          />
+        </GridColumn>
       </Grid>
     );
   }

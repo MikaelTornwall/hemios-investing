@@ -4,7 +4,7 @@ import './IncomeStatementList.scss';
 
 export default class IncomeStatementList extends Component {
   state = {
-    activeIndex: 0
+    activeIndex: -1
   };
 
   handleAccordionClick = (e, titleProps) => {

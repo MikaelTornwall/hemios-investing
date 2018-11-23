@@ -4,7 +4,7 @@ import './IndustryList.scss';
 
 export default class IndustryList extends Component {
   state = {
-    activeIndex: 0
+    activeIndex: -1
   };
 
   handleAccordionClick = (e, titleProps) => {

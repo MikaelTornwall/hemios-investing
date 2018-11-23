@@ -60,7 +60,7 @@ export default class BalanceSheetList extends Component {
     ];
 
     const AccordionNested = () => (
-      <Accordion defaultActiveIndex={0} panels={rootPanel} />
+      <Accordion defaultActiveIndex={-1} panels={rootPanel} />
     );
 
     return (

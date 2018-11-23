@@ -19,15 +19,16 @@ export default class GraphCard extends Component {
   };
 
   render() {
-    console.log('DP in GraphCard: ', this.props.dataProvider);
+    const width = { width: parseInt(this.props.graphSize.w) + 20 };
     return (
-      <Card style={{ width: 400 }}>
+      <Card style={width}>
         <Card.Content header={this.makeHeader()} />
         <Card.Content>
           <LineChart
             kpi={this.props.kpi}
             companies={this.props.companies}
             dataProvider={this.props.dataProvider.companies}
+            graphSize={this.props.graphSize}
           />
         </Card.Content>
       </Card>

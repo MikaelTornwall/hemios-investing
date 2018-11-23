@@ -13,6 +13,10 @@ export default class View extends Component {
       companySelectVisible: true,
       KPISelectVisible: false,
       timeIntervalSelectVisible: false
+    },
+    graphSize: {
+      w: 400,
+      h: 300
     }
   };
 
@@ -35,6 +39,13 @@ export default class View extends Component {
   setVisibilities = visibilities => {
     this.setState({ visibilities: visibilities });
   };
+
+  onGraphSizeChange = newSize => {
+    this.setState({
+      graphSize: newSize
+    });
+  };
+
   render() {
     console.log('DP in view: ', this.props.dataProvider);
     return (
@@ -50,6 +61,8 @@ export default class View extends Component {
             timeIntervalSelectVisible={
               this.state.visibilities.timeIntervalSelectVisible
             }
+            onGraphSizeChange={this.onGraphSizeChange}
+            graphSize={this.state.graphSize}
             {...this.props}
             tab={1}
           />
@@ -60,6 +73,7 @@ export default class View extends Component {
               kpi={selectedKPI}
               companies={this.state.selectedCompanies}
               dataProvider={this.props.dataProvider}
+              graphSize={this.state.graphSize}
             />
           ))}
         </Card.Group>
