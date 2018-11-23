@@ -16,6 +16,7 @@ class LineChart extends React.Component {
     category: 'balanceSheetHistoryQuarterly',
     kpi: null,
     timeline: ['2018-06-30', '2018-03-31', '2017-12-31', '2017-09-30'],
+    altTimeline: ['2018-05-31', '2018-02-28', '2017-11-30', '2017-08-31'],
     graphData: [],
     colors: []
   };
@@ -40,13 +41,14 @@ class LineChart extends React.Component {
           company,
           this.state.category,
           this.state.kpi,
-          this.state.timeline
+          this.state.timeline,
+          this.state.altTimeline
         );
       });
     }
   }
 
-  generateGraphdata = (data, company, category, kpi, timeline) => {
+  generateGraphdata = (data, company, category, kpi, timeline, altTimeline) => {
     const arr = [];
 
     console.log('Parametrit: ');
@@ -59,29 +61,31 @@ class LineChart extends React.Component {
     // timeline = timeline.reverse()
 
     // Finds the specific company data
-    console.log('Data1: ', data);
     let dataToBeAdded = data.find(c => c.name === company);
-    console.log('dataToBeAdded1: ', dataToBeAdded);
-    console.log('dataToBeAdded1: ', dataToBeAdded.toString());
+
     // Calls a function that reverses the order of dates within the data array
     // dataToBeAdded = this.reverseTimelineOfValue(dataToBeAdded, category);
 
     // Adds each year/quarter and corresponding value into an object
     // Creates an array for each company that contains time - value -pairs for each date
     // Adds these objects into an array of a company in question
-    for (let i = timeline.length - 1; i >= 0; i--) {
-      console.log(
-        'loop: ',
-        dataToBeAdded.values,
-        dataToBeAdded.values[category]
-      );
-      console.log('loop timeline: ', timeline[i]);
-      arr.push({
-        x: timeline[i],
-        y: Math.floor(
-          dataToBeAdded.values[category][i][timeline[i]][kpi] / 1000000
-        )
-      });
+
+    console.log(dataToBeAdded.values[category][0]);
+
+    if (timeline[0] in dataToBeAdded.values[category][0]) {
+      for (let i = timeline.length - 1; i >= 0; i--) {
+        arr.push({
+          x: timeline[i],
+          y: dataToBeAdded.values[category][i][timeline[i]][kpi] / 1000000
+        });
+      }
+    } else {
+      for (let i = timeline.length - 1; i >= 0; i--) {
+        arr.push({
+          x: timeline[i],
+          y: dataToBeAdded.values[category][i][altTimeline[i]][kpi] / 1000000
+        });
+      }
     }
 
     this.setState(prevState => ({ graphData: [...prevState.graphData, arr] }));
@@ -148,35 +152,7 @@ class LineChart extends React.Component {
               color={this.state.colors[i]}
             />
           ))}
-          <Crosshair values={this.state.crosshairValues}>
-            <div
-              style={{
-                background: 'rgba(50,50,50,0.93)',
-                color: 'rgba(200,200,200,0.87)',
-                width: 80,
-                padding: 3,
-                fontSize: 8,
-                borderRadius: 5
-              }}
-            >
-              <div>
-                <strong>
-                  {this.state.crosshairValues.length > 0
-                    ? this.state.crosshairValues[0].x
-                    : null}
-                  :
-                </strong>
-              </div>
-              {this.state.crosshairValues.map((value, i) => (
-                <div>
-                  <span style={{ color: this.state.colors[i] }}>
-                    {this.state.companies[i]}:
-                  </span>{' '}
-                  {value.y} m$
-                </div>
-              ))}
-            </div>
-          </Crosshair>
+          <Crosshair values={this.state.crosshairValues} />
         </XYPlot>
       </>
     );
