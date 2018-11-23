@@ -12,7 +12,7 @@ const ViewTabs = props => (
     menu={{ secondary: true, pointing: true }}
     panes={[
       {
-        menuItem: 'fun',
+        menuItem: 'My portfolio',
         pane: (
           <Tab.Pane key={1}>
             <View {...props} />
@@ -20,7 +20,7 @@ const ViewTabs = props => (
         )
       },
       {
-        menuItem: 'serious',
+        menuItem: 'Interesting companies',
         pane: (
           <Tab.Pane key={2}>
             <View {...props} />
@@ -28,7 +28,7 @@ const ViewTabs = props => (
         )
       },
       {
-        menuItem: 'random',
+        menuItem: 'Sandbox',
         pane: (
           <Tab.Pane key={3}>
             <View {...props} />
