@@ -3924,11 +3924,16 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 }
 .ui.container.hemios-sidebar {
   margin: 0 !important;
+  overflow: hidden;
+  float: left;
 }
 @media only screen and (min-width: 768px) {
   .ui.container.hemios-sidebar {
     width: 400px !important;
   }
+}
+.hemios-parameter {
+  margin: 11px;
 } /*!
  * # Semantic UI 2.4.2 - Divider
  * http://github.com/semantic-org/semantic-ui/
@@ -14109,6 +14114,9 @@ ol.ui.horizontal.list li:before {
 }
 body ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
+}
+.ui.segment.active.tab {
+  overflow: auto;
 } /*!
  * # Semantic UI 2.4.2 - Step
  * http://github.com/semantic-org/semantic-ui/
@@ -17305,9 +17313,6 @@ body ::-webkit-scrollbar-track {
   .ui[class*='tablet only'].grid.grid.grid:not(.computer) {
     display: none !important;
   }
-}
-.column.hemios-sidebar {
-  width: 400px !important;
 }
 .ui.menu {
   display: -webkit-box;
@@ -21069,6 +21074,11 @@ a.ui.card:hover {
 }
 .ui.cards > .card {
   font-size: 1em;
+}
+@media only screen and (max-width: 768px) {
+  .hemios-graphs {
+    clear: both;
+  }
 } /*!
  * # Semantic UI 2.4.2 - Comment
  * http://github.com/semantic-org/semantic-ui/

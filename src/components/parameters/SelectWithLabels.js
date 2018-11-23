@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container, Sticky } from 'semantic-ui-react';
 import _ from 'lodash';
 
 import SelectLabel from './SelectLabel';
@@ -59,6 +59,15 @@ export function selectWithLabels(WrappedSelectComponent, type) {
       });
     };
 
+    generateLabels = () => {
+      return this.selectedItems.map(selectedItem => (
+        <SelectLabel
+          onIconClick={this.unSelectItem}
+          key={selectedItem.key}
+          item={selectedItem}
+        />
+      ));
+    };
     render() {
       return (
         <>
@@ -72,15 +81,11 @@ export function selectWithLabels(WrappedSelectComponent, type) {
               dataProvider={this.props.dataProvider}
             />
           </Container>
-          <Container>
-            {this.selectedItems.map(selectedItem => (
-              <SelectLabel
-                onIconClick={this.unSelectItem}
-                key={selectedItem.key}
-                item={selectedItem}
-              />
-            ))}
-          </Container>
+          {type === 1 ? (
+            <Sticky>{this.generateLabels()}</Sticky>
+          ) : (
+            <Container> {this.generateLabels()} </Container>
+          )}
         </>
       );
     }

@@ -78,6 +78,7 @@ export default class ParameterAccordionContainer extends Component {
               showAccordion={this.showCompanySelect}
               updateSelection={this.props.updateCompanies}
               dataProvider={this.props.dataProvider}
+              stickyContext={this.props.stickyContext}
             />
           </GridColumn>
           <GridColumn>
@@ -86,6 +87,7 @@ export default class ParameterAccordionContainer extends Component {
               showAccordion={this.showKPISelect}
               updateSelection={this.props.updateKPIs}
               dataProvider={this.props.dataProvider}
+              stickyContext={this.props.stickyContext}
             />
           </GridColumn>
           <GridColumn>
@@ -93,6 +95,7 @@ export default class ParameterAccordionContainer extends Component {
               visible={this.props.timeIntervalSelectVisible}
               showAccordion={this.showTimeIntervalSelect}
               updateSelection={this.props.updateTimeInterval}
+              stickyContext={this.props.stickyContext}
             />
           </GridColumn>
         </GridRow>

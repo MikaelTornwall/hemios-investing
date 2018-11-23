@@ -20,7 +20,7 @@ export function parameterAccordion(WrappedComponent, title) {
             />
             {title}
           </h5>
-          <Container>
+          <Container className={'hemios-parameter'}>
             <WrappedComponent
               updateSelection={this.props.updateSelection}
               visible={this.props.visible}

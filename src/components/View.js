@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Container, Card } from 'semantic-ui-react';
 
 import GraphCard from './GraphCard';
 import ParameterAccordionContainer from './parameters/ParameterAccordionContainer';
@@ -37,8 +37,8 @@ export default class View extends Component {
   };
   render() {
     return (
-      <Grid stackable columns={2}>
-        <Grid.Column className={'hemios-sidebar'}>
+      <>
+        <Container className={'hemios-sidebar'}>
           <ParameterAccordionContainer
             updateCompanies={this.updateCompanies}
             updateKPIs={this.updateKPIs}
@@ -52,21 +52,17 @@ export default class View extends Component {
             {...this.props}
             tab={1}
           />
-        </Grid.Column>
-        <Grid.Column>
-          <Grid columns={3}>
-            {this.state.selectedKPIs.map(selectedKPI => (
-              <Grid.Column key={selectedKPI}>
-                <GraphCard
-                  kpi={selectedKPI}
-                  companies={this.state.selectedCompanies}
-                  dataProvider={this.props.dataProvider}
-                />
-              </Grid.Column>
-            ))}
-          </Grid>
-        </Grid.Column>
-      </Grid>
+        </Container>
+        <Card.Group className={'hemios-graphs'}>
+          {this.state.selectedKPIs.map(selectedKPI => (
+            <GraphCard
+              kpi={selectedKPI}
+              companies={this.state.selectedCompanies}
+              dataProvider={this.props.dataProvider}
+            />
+          ))}
+        </Card.Group>
+      </>
     );
   }
 }

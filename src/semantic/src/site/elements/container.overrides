@@ -7,4 +7,10 @@
     width: 400px !important;
   }
   margin: 0px !important;
+  overflow: hidden;
+  float: left;
+}
+
+.hemios-parameter {
+  margin: 11px;
 }

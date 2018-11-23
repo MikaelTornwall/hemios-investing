@@ -103,9 +103,14 @@
 }
 .ui.container.hemios-sidebar {
   margin: 0 !important;
+  overflow: hidden;
+  float: left;
 }
 @media only screen and (min-width: 768px) {
   .ui.container.hemios-sidebar {
     width: 400px !important;
   }
+}
+.hemios-parameter {
+  margin: 11px;
 }

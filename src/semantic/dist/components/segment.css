@@ -883,3 +883,6 @@
 body ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
 }
+.ui.segment.active.tab {
+  overflow: auto;
+}

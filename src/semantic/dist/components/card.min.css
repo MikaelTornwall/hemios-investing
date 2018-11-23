@@ -801,3 +801,8 @@ a.ui.card:hover {
 .ui.cards > .card {
   font-size: 1em;
 }
+@media only screen and (max-width: 768px) {
+  .hemios-graphs {
+    clear: both;
+  }
+}

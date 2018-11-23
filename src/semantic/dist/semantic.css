@@ -5305,12 +5305,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 .ui.container.hemios-sidebar {
   margin: 0px !important;
+  overflow: hidden;
+  float: left;
 }
 
 @media only screen and (min-width: 768px) {
   .ui.container.hemios-sidebar {
     width: 400px !important;
   }
+}
+
+.hemios-parameter {
+  margin: 11px;
 }
 /*!
  * # Semantic UI 2.4.2 - Divider
@@ -19433,6 +19439,10 @@ ol.ui.horizontal.list li:before,
 body ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
 }
+
+.ui.segment.active.tab {
+  overflow: auto;
+}
 /*!
  * # Semantic UI 2.4.2 - Step
  * http://github.com/semantic-org/semantic-ui/
@@ -23807,10 +23817,6 @@ body ::-webkit-scrollbar-track {
 /*******************************
          Site Overrides
 *******************************/
-
-.column.hemios-sidebar {
-  width: 400px !important;
-}
 /*
  * # Semantic - Menu
  * http://github.com/semantic-org/semantic-ui/
@@ -29470,6 +29476,12 @@ a.ui.card:hover,
 /*******************************
     User Variable Overrides
 *******************************/
+
+@media only screen and (max-width: 768px) {
+  .hemios-graphs {
+    clear: both;
+  }
+}
 /*!
  * # Semantic UI 2.4.2 - Comment
  * http://github.com/semantic-org/semantic-ui/

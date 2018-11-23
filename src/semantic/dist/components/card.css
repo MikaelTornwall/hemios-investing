@@ -1043,3 +1043,9 @@ a.ui.card:hover,
 /*******************************
     User Variable Overrides
 *******************************/
+
+@media only screen and (max-width: 768px) {
+  .hemios-graphs {
+    clear: both;
+  }
+}
