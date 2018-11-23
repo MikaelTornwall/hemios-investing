@@ -17,12 +17,17 @@ export default class GraphCard extends Component {
       </Container>
     );
   };
+
   render() {
     return (
-      <Card>
+      <Card style={{ width: 400 }}>
         <Card.Content header={this.makeHeader()} />
         <Card.Content>
-          <LineChart kpi={this.props.kpi} companies={this.props.companies} />
+          <LineChart
+            kpi={this.props.kpi}
+            companies={this.props.companies}
+            dataProvider={this.props.dataProvider.companyData}
+          />
         </Card.Content>
       </Card>
     );

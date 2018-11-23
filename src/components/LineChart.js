@@ -1,9 +1,4 @@
 import React from 'react';
-import AAL from '../assets/AALfinancials.js';
-import ABBV from '../assets/ABBVfinancials.js';
-import AEE from '../assets/AEEfinancials.js';
-import COG from '../assets/COGfinancials.js';
-import EVHC from '../assets/EVHCfinancials.js';
 import {
   XYPlot,
   XAxis,
@@ -16,7 +11,7 @@ import {
 class LineChart extends React.Component {
   state = {
     crosshairValues: [],
-    financialData: [AAL, ABBV, AEE, COG, EVHC],
+    financialData: [],
     companies: [],
     category: 'cashflowStatementHistory',
     kpi: null,
@@ -41,7 +36,7 @@ class LineChart extends React.Component {
     if (this.state.kpi !== null && this.state.companies.length > 0) {
       this.state.companies.map(company => {
         return this.generateGraphdata(
-          this.state.financialData,
+          this.props.dataProvider,
           company,
           this.state.category,
           this.state.kpi,
