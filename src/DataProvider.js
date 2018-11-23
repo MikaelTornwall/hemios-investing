@@ -8,14 +8,13 @@ import inv from './assets/investments.js';
 import dep from './assets/depreciation.js';
 import cash from './assets/cash.js';
 
-import kpisWithCategory from './resources/kpis.json';
-
 import _ from 'lodash';
 
 export default class DataProvider {
-  constructor(data, industryData) {
+  constructor(data, industryData, kpisData) {
     //this.companies = data;
     this.industries = industryData;
+    this.kpis = kpisData;
 
     //this test data should be coming from the api eventually^^
     this.companyData = [AAL, ABB, AEE, COG, EVHC];
@@ -41,7 +40,7 @@ export default class DataProvider {
 
   // Return object with kpi types as key and belonging kpi list as value
   getAllKpisWithCategory() {
-    return kpisWithCategory.kpiCategories;
+    return this.kpis[0].kpiCategories;
   }
 
   getAllKPIsList() {

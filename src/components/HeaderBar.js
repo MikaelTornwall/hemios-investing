@@ -12,7 +12,7 @@ const HeaderBar = () => {
       <div className={'header-bar'}>
         <div className="leftSided">
           <NavLink to="/">
-            <img src={logo} size="small" />
+            <img src={logo} alt="logo" size="small" />
           </NavLink>
         </div>
         <div className="rightSided">

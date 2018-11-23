@@ -32,16 +32,6 @@ export default class CompanySelect extends Component {
   componentDidMount() {
     this.props.populate(this.props.dataProvider.getAllCompaniesList());
     //this.props.populate(allCompanies);
-    console.log(
-      'All companies from dataProvider Key: ' +
-        this.props.dataProvider.getAllCompaniesList()[0].key
-    );
-    console.log(
-      'Value: ' + this.props.dataProvider.getAllCompaniesList()[0].value
-    );
-    console.log(
-      'Text: ' + this.props.dataProvider.getAllCompaniesList()[0].text
-    );
   }
   render() {
     return (
