@@ -18,7 +18,7 @@ const HeaderBar = () => {
         <div className="rightSided">
           {_.endsWith(window.location.href, '/dashboard') ? null : (
             <NavLink to="/dashboard">
-              <Button className="primary">Try it out!</Button>
+              <Button className="primary">Dashboard</Button>
             </NavLink>
           )}
           <Button className="basic primary">Login</Button>
